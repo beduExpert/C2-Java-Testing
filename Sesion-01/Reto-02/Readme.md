@@ -1,29 +1,40 @@
- 
-
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+## Uso de los métodoe grafos Causa-Efecto y tablas de decisión para casos de prueba para calcular primas en seguros de autos
 
 ### OBJETIVO 
 
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
+- Aplicar dos métodos combinados para diseñar casos de prueba.
 
 #### DESARROLLO
 
-Agrega las instrucciones generales del ejemplo o reto
+1.Revisar los requerimientos para calcular primas en seguros de autos, mostrados a continuación:
+
+    - Para mujeres de menos de 65 años, la prima es de $500
+    - Para hombres de menos de 25 años, la prima es de $3000
+    - Para hombres entre 25 y 64 años, la prima es de $1000
+    - Para cualquiera de mas de 65 años, la prima es de $1500
 
 <details>
 
 	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
+<p>2. Identificar Causas y efectos</p>
+![imagen](img/figura_01.png)
+
+<p>3. Elaboramos grafos</p>
+![imagen](img/figura_02.png)
+
+<p>4. Colocamos una restricción de una y solo una porque el sexo puede ser masculino o femenino pero no ambos</p>
+![imagen](img/figura_03.png)
+
+<p>5. Elaboramos la tabla de decisión</p>
+![imagen](img/figura_04.png)
+
+<p>6. Elaboramos los casos de prueba</p>
+![imagen](img/figura_05.png)
+
+
+
 </details> 
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
 
-![imagen](https://picsum.photos/200/300)
+
 
