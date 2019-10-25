@@ -15,7 +15,7 @@
 
 <details>
 
-	<summary>Solucion</summary>
+<summary>Solucion</summary>
 <p>2. Identificar Causas y efectos</p>
 
 ![imagen](img/figura_01.png)
