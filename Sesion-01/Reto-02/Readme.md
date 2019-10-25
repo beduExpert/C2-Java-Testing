@@ -17,18 +17,23 @@
 
 	<summary>Solucion</summary>
 <p>2. Identificar Causas y efectos</p>
+
 ![imagen](img/figura_01.png)
 
 <p>3. Elaboramos grafos</p>
+
 ![imagen](img/figura_02.png)
 
 <p>4. Colocamos una restricción de una y solo una porque el sexo puede ser masculino o femenino pero no ambos</p>
+
 ![imagen](img/figura_03.png)
 
 <p>5. Elaboramos la tabla de decisión</p>
+
 ![imagen](img/figura_04.png)
 
 <p>6. Elaboramos los casos de prueba</p>
+
 ![imagen](img/figura_05.png)
 
 
