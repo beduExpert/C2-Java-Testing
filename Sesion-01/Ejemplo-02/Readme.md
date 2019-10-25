@@ -1,28 +1,26 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
-
-## Titulo del Ejemplo
+## Creación de tabla de decisión 
 
 ### OBJETIVO
 
-- Lo que esperamos que el alumno aprenda
-
-#### REQUISITOS
-
-1. Lo necesario para desarrollar el ejemplo o el Reto
+- Definir casos de prueba útiles y que generan valor aplicando el método de la tabla de decisión.
 
 #### DESARROLLO
 
-Agrega las instrucciones generales del ejemplo o reto
+1. Leer la especificación de los requisitos para aplicar descuento al pagar con tarjeta:
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
-
-![imagen](https://picsum.photos/200/300)
+Se quiere determinar el importe a facturar a los clientes de unos grandes almacenes según estos criterios:
+-Si pagan con tarjeta oro tendrán un 15% de descuento.
+-Si pagan con tarjeta club tendrán un 5% de descuento.
+-Si la tarjeta (oro o club) es modalidad joven, tendrán un 5% de descuento.
+-Los descuentos son acumulables.
 
 
+2. Construir la tabla de decisión asociada a este planteamiento
+
+![imagen](img/figura_01.png)
+
+
+3. Simplificar la tabla anterior, eliminando los casos inviables
+
+![imagen](img/figura_02.png)
