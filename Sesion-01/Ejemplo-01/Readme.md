@@ -41,16 +41,6 @@
 ![imagen](img/figura_07.png)
 
 
-7. Verifica el resultado de la prueba.
+7. Verifica el resultado de la prueba, el cual debe ser una línea roja
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
-
-
-
-
+![imagen](img/figura_08.png)
