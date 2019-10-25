@@ -1,29 +1,38 @@
- 
-
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+## Ejecutando una prueba exitosa
 
 ### OBJETIVO 
 
-- Lo que esperamos que el alumno aprenda 
+- Realizar las modificaciones necesarias en el código del ejemplo anterior, para que la prueba se ejecute de forma exitosa, haciendo uso de la clase SumadorLunar. 
 
 #### REQUISITOS 
 
-1. Lo necesario para desarrollar el ejemplo o el Reto 
+1. Ejemplo anterior funcionando.
 
 #### DESARROLLO
 
-Agrega las instrucciones generales del ejemplo o reto
+Modifica la clase SumadorLunarTest de forma que la prueba deje de fallar, obteniendo una salida como la siguiente:
+
+![imagen](img/figura_01.png)
+
 
 <details>
-
 	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
+	<p>2. Modifica la clase SumadorLunarTest eliminando la línea: </p>
+	```
+	fail("Not yet implemented");
+	```
+	
+	<p>3. Crea una nueva instanacia de la clase SumadorLunar dentro del método sumaLunar </p>
+	```
+	void sumaLunar() {
+		SumadorLunar sumador = new SumadorLunar();
+	}
+	```
+	
+	<p>4. Invoca el método suma de la instancia sumador, pasando cualquier par de números enteros como parámetros</p>
+	```
+	sumador.sumar(12, 25);
+	```
+	
+	<p>5. Abre la clase SumadorLunarTest, ve al botón RunAs -> JUnit Test</p>
 </details> 
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
