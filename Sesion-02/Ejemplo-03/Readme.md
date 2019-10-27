@@ -1,28 +1,65 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
-
-## Titulo del Ejemplo
+## Complejidad Ciclomática en código
 
 ### OBJETIVO
 
-- Lo que esperamos que el alumno aprenda
-
-#### REQUISITOS
-
-1. Lo necesario para desarrollar el ejemplo o el Reto
+- Calcular la complejidad ciclomática de un bloque de código.
 
 #### DESARROLLO
 
-Agrega las instrucciones generales del ejemplo o reto
+1. Etiqueta cada uno de los bloques del siguiente código.
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+Tip: El código contiene además de instrucciones secuenciales (que se ejecutan siempre una después de la otra).
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
+	while (x < 100) {
+  		if (a[x] % 2 == 0) {
+    			paridad = 0;
+  		}
+  		else {
+    			paridad = 1;
+  		}
+  
+  		switch(paridad) {
+    			case 0:
+      				println("a[" + x + "] es par");
+      				break;
+    			case 1:
+      				println("a[" + x + "] es impar");
+      				break;
+    			default:
+      				println("Error inesperado");
+       
+  		}
+  
+  		x++;
+	}
 
-![imagen](https://picsum.photos/200/300)
+	p = true;
 
+
+![imagen](img/figura_01.png)
+
+
+2. Dibujar el gráfico de flujo del siguiente bloque de código:
+
+![imagen](img/figura_02.png)
+
+
+3. Calcular la complejidad ciclomática usando el número de nodos y aristas. A modo de recordatorio, la formula es la siguiente:
+
+		V(G) = E - N + 2, donde
+		E = Número de Aristas
+		N = Número de nodos.
+		
+Tenemos que:
+		E = 13
+		N = 10
+	
+Por lo tanto:
+
+		V(G) = 13 - 10 + 2
+		V(G) = 3 + 2
+		V(G) = 5	
+		
+En el ejemplo anterior podemos comprobar que la complejidad ciclomática es 5.
 
