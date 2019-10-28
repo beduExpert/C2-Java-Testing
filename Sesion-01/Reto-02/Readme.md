@@ -1,4 +1,4 @@
-## Uso de los métodoe grafos Causa-Efecto y tablas de decisión para casos de prueba para calcular primas en seguros de autos
+## Uso de los métodos gráfos Causa-Efecto y tablas de decisión para casos de prueba
 
 ### OBJETIVO 
 
