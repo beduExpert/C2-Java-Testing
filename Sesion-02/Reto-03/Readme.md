@@ -56,12 +56,12 @@ Calcula la complejidad ciclomática el siguiente bloque de código:
 
 2. Etiqueta cada una de las instrucciones de la aplicación.
 
-![imagen](img/figura_01.jpg)
+![imagen](img/figura_01.png)
 
 
 3. Dibujar el gráfico de flujo del siguiente bloque de código:
 
-![imagen](img/figura_02.jpg)
+![imagen](img/figura_02.png)
 
 
 4. Calcular la complejidad ciclomática usando el número de nodos y aristas. A modo de recordatorio, la formula es la siguiente:
