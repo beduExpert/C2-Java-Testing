@@ -1,20 +1,25 @@
- 
-
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+## Kata Calculadora de Cadenas parte 2
 
 ### OBJETIVO 
 
-- Lo que esperamos que el alumno aprenda 
+- Continuar con el aprendizaje de TDD agregando requisitos adicionales a la calculadora de cadenas de el Ejercicio anterior
 
 #### REQUISITOS 
 
-1. Lo necesario para desarrollar el ejemplo o el Reto 
+1. JDK 11.
+2. IDE Eclipse.
+3. JUnit 5
+4. Ejercicio-01 calculadora de Cadenas
 
 #### DESARROLLO
 
-Agrega las instrucciones generales del ejemplo o reto
+En este reto tendrás que agregar algunas funcionalidades adicionales a la calculadora de cadenas visto en el primero ejemplo. 
+
+-Requisito 1: Llamar al método add con números negtivos debe lanzar una excepción con el mensaje "no se admiten números negativos".
+-Requisito 2: El mensaje de error de la excepción lanzada debe contener el número negativo que se está pasando. Por ejemplo, si el -método recibe un -3 el mensaje debe decir "no se admiten números negativos [-3]".
+-Requisito 3: Si hay múltiples números negativos, el mensaje debe contenerlos a todos.
+
+Recuerda, debes ir avanzando requisito por requisito; primero escribe el código de las pruebas; escribe solamente el código necesario para que la prueba que acabes de escribir pase de forma exitosa.
 
 <details>
 
