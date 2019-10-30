@@ -1,16 +1,22 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
-
-## Titulo de la Sesion 
+## JUnit y TestNG
 
 ### OBJETIVOS 
 
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
+- Crear pruebas unitarias usando JUnit 5
+- Crear pruebas unitarias usando TestNG
+- Crear suites de pruebas usando TestNG
 
 #### ORGANIZACION DE LA CLASE 
 
-- Tema que veran en el ejemplo
-
+- Crear pruebas unitarias usando JUnit 5
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
 
+- Crear pruebas unitarias usando TestNG
+	- [Ejemplo 02](Ejemplo-02)
+	- [Reto 02](Reto-02)
+
+- Crear suites de pruebas usando TestNG
+	- [Ejemplo 03](Ejemplo-03)
+	- [Reto 03](Reto-03)
