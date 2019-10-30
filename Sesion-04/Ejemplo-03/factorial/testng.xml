@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Pruebas correctas" verbose="1" >
+<test name="Valores válidos" preserve-order="false" parallel="true">
+    <classes>
+        <class name="org.bedu.FactorialTest">
+            <methods>
+                <include name="testFactorialCero"/>
+                <include name="testFactorialDiez"/>
+            </methods>
+        </class>
+    </classes>
+</test>
+</suite>
