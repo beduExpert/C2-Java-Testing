@@ -1,29 +1,22 @@
- 
+## Diseño de pruebas unitarias con JUnit
+### Objetivo
+- Continuar con el aprendizaje de JUnit 5 agregando casos de prueba a la calculadora de áreas y perímetros.
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Requisitos
+1. JDK 8 o superior
+2. IDE de tu preferencia
+3. Apache Maven
+4. JUnit 5
+5. Ejemplo-01 (calculadora de áreas y perímetros)
 
-### OBJETIVO 
-
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
-
-<details>
-
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
+### Desarrollo
+1. Continuando con lo realizado en el Ejemplo 01, agregaremos los casos de prueba necesarios para asegurar una cobertura al 100% del código.
+2. Para ello, se tendrán que agregar los casos de prueba que cubran todos los métodos para calcular áreas y perímetros de las figuras, y además al diseñar las pruebas hay que considerar los siguientes casos junto con la respuesta que esperamos:
+<pre>
+Valores válidos
+Valores extremos (entendidos como valores muy grandes o muy pequeños)
+Valores no válidos (como valores nulos o no aceptados por las funciones)
+Caminos incorrectos (en el caso de condicionales y switches)
+</pre>
+3. Una vez desarrolladas las pruebas, ejecutarlas mediante el IDE o con el comando `mvn clean test` en la carpeta raíz del proyecto.
+4. Verificar que los resultados obtenidos con las pruebas sean válidos, incluyendo que fallen cuando sea esperado un fallo indicando qué valor era esperado.
