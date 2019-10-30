@@ -54,7 +54,7 @@ Recuerda resolver el problema de la forma más simple posible y refactorizar des
 
 1. Crea un nuevo proyecto Maven en Eclipse llamado KataFizzBuzz
 
-![imagen](img/figura_01.jpg)
+![imagen](img/figura_01.png)
 
 2. Reemplazar el archivo pom.xml del proyecto con el siguiente:
 ```xml
@@ -129,7 +129,7 @@ Recuerda resolver el problema de la forma más simple posible y refactorizar des
 
 Si volvemos a ejecutar la prueba esta debe pasar de forma correcta. 
 
-![imagen](img/figura_03.jpg)
+![imagen](img/figura_03.png)
 
 3. Agregaremos otra prueba para validar que 1 regresa el valor de "1", de esta forma:
 
@@ -142,7 +142,7 @@ Si volvemos a ejecutar la prueba esta debe pasar de forma correcta.
 
 Si ejecutamos esta prueba, debe fallar:
 
-![imagen](img/figura_04.jpg)
+![imagen](img/figura_04.png)
 
 4. Ahora, escriba el código que hace que la prueba pase; en este caso, será tan sencillo como modificar el método valorSecuencia de la siguiente forma:
 
@@ -154,7 +154,7 @@ Si ejecutamos esta prueba, debe fallar:
 
 5. Ejecuta nuevamente la prueba y esta debe pasar de manera correcta:
 
-![imagen](img/figura_05.jpg)
+![imagen](img/figura_05.png)
 
 6. El siguiente paso debería ser probar el valor de 2, pero como esta prueba es similar a la anterior pasaremos a probar el valor de "3". Recordemos que este método en vez de regresar 3 debe regresar "Fizz", de la siguiente forma:
 
@@ -212,7 +212,7 @@ Si ejecutamos la prueba esta no pasará.
 
 Si ejecutamos la prueba esta pasará de manera correcta.
 
-![imagen](img/figura_06.jpg)
+![imagen](img/figura_06.png)
 
 10. El siguiente valor a probar es el 6, el cual debe regresar el valor de "Fizz", de la siguiente forma:
 
@@ -225,7 +225,7 @@ Si ejecutamos la prueba esta pasará de manera correcta.
 
 Si ejecutamos la prueba, esta nuevamente fallará:
 
-![imagen](img/figura_07.jpg)
+![imagen](img/figura_07.png) 
 
 11. Para hacer que la prueba pase, hay que hacer una ligera modificación a la primera condición, de la siguiente forma:
 
