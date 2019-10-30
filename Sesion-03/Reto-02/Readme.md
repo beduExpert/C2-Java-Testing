@@ -1,16 +1,14 @@
- 
-
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+## Kata Cadenas Invertidas
 
 ### OBJETIVO 
 
-- Lo que esperamos que el alumno aprenda 
+- Practicar el uso de TDD a través de su implementación en una Kata de nivel intermedio.
 
 #### REQUISITOS 
 
-1. Lo necesario para desarrollar el ejemplo o el Reto 
+1. JDK 11
+2. JUnit 5.
+3. IDE Eclipse.
 
 #### DESARROLLO
 
