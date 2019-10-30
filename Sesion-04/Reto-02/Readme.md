@@ -1,29 +1,15 @@
- 
+## Diseño de pruebas parametrizables con TestNG
+### Objetivo
+- Practicar el diseño de pruebas parametrizables con el uso del framework TestNG.
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Requisitos
+1. JDK 8 o superior
+2. IDE de tu preferencia
+3. Apache Maven
+4. TestNG 7
+5. Ejemplo 02 (Calculadora de áreas y perímetros)
 
-### OBJETIVO 
-
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
-
-<details>
-
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
+### Desarrollo
+1. Como se vio en el ejemplo, las pruebas parametrizadas permiten ahorrar tiempo mediante la reutilización de un mismo método con diferentes datos, provistos de una base de datos o por algún otro método.
+2. Este reto consiste en la adición de las pruebas parametrizables suficientes para cubrir el resto de la funcionalidad de la calculadora, añadiendo los data provider y métodos de prueba necesarios.
+3. Recuerda que las pruebas pueden ser ejecutadas mediante la interfaz del IDE o con el comando `mvn clean test` en la carpeta raíz del proyecto.
