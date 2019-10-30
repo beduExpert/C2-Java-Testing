@@ -108,12 +108,12 @@ Recuerda resolver el problema de la forma más simple posible y refactorizar des
  - Si es divisible entres tres y cinco debe regregsar "FizzBuzz".
  - Si no se cumple ninguna de las tres condiciones anteriores, debe regresar el mismo número.
  
- 5. Dentro de la clase de prueba comencemos con un método que se asegure que si recibe 0 como parámetro, este regrese el valor de 0:
+ 5. Dentro de la clase de prueba comencemos con un método que se asegure que si recibe 0 como parámetro, este regrese el valor de "0":
  
 ```java
 	@Test
 	void ceroEsCero() {
-		assertEquals("0", FizzBuzz.valorSecuencia("0"));
+		assertEquals("0", FizzBuzz.valorSecuencia(0));
 	}
 ```
  
@@ -121,7 +121,7 @@ Recuerda resolver el problema de la forma más simple posible y refactorizar des
 
 ```java
 	public class FizzBuzz {
-		public static String valorSecuencia(String string) {
+		public static String valorSecuencia(int valor) {
 			return "0";
 		}
 	}
@@ -131,12 +131,12 @@ Si volvemos a ejecutar la prueba esta debe pasar de forma correcta.
 
 ![imagen](img/figura_03.jpg)
 
-3. Agregaremos otra prueba para validar que "1" regresa el valor de "1", de esta forma:
+3. Agregaremos otra prueba para validar que 1 regresa el valor de "1", de esta forma:
 
 ```java
 	@Test
 	void unoEsUno() {
-		assertEquals("1", FizzBuzz.valorSecuencia("1"));
+		assertEquals("1", FizzBuzz.valorSecuencia(1));
 	}
 ```
 
@@ -147,8 +147,8 @@ Si ejecutamos esta prueba, debe fallar:
 4. Ahora, escriba el código que hace que la prueba pase; en este caso, será tan sencillo como modificar el método valorSecuencia de la siguiente forma:
 
 ```java
-	public static String valorSecuencia(String string) {
-		return String.valueOf(string);
+	public static String valorSecuencia(int valor) {
+		return String.valueOf(valor);
 	}
 ```
 
@@ -156,12 +156,12 @@ Si ejecutamos esta prueba, debe fallar:
 
 ![imagen](img/figura_05.jpg)
 
-6. El siguiente paso debería ser probar el valor de "2", pero como esta prueba es similar a la anterior pasaremos a probar el valor de "3". Recordemos que este método en vez de regresar "3" debe regresar "Fizz", de la siguiente forma:
+6. El siguiente paso debería ser probar el valor de 2, pero como esta prueba es similar a la anterior pasaremos a probar el valor de "3". Recordemos que este método en vez de regresar 3 debe regresar "Fizz", de la siguiente forma:
 
 ```java
 	@Test
 	void tresEsFizz() {
-		assertEquals("Fizz", FizzBuzz.valorSecuencia("3"));
+		assertEquals("Fizz", FizzBuzz.valorSecuencia(3));
 	}
 ```
 
@@ -170,14 +170,236 @@ Si ejecutamos nuevamente la prueba esta debe fallar.
 7. Ahora, hay que escribir el código que haga pasar la prueba, en este caso la modificación queda de la siguiente forma:
 
 ```java
-	public static String valorSecuencia(String string) {
+	public static String valorSecuencia(int valor) {
 		
-		if("3".equals(string)) {
+		if(3 == valor) {
 			return "Fizz";
-		}
+		} 
 		
-		return String.valueOf(string);
+		return String.valueOf(valor);
 	}
 ```
 
 Si volvemos a ejecutar la preba esta pasará de manera correcta.
+
+8. Hagamos algo similar para el valor "5", el cual debe regresar "Buzz", primero la prueba:
+
+```java
+	@Test
+	void cincoEsBuzz() {
+		assertEquals("Buzz", FizzBuzz.valorSecuencia(5));
+	}
+```
+
+Si ejecutamos la prueba esta no pasará.
+
+9. Coloquemos el código que haga pasar la prueba, en este caso:
+
+```java
+	public static String valorSecuencia(int valor) {
+		
+		if(3 == valor) {
+			return "Fizz";
+		} 
+		
+		if(5 == valor) {
+			return "Buzz";
+		}
+		
+		return String.valueOf(valor);
+	}
+```
+
+Si ejecutamos la prueba esta pasará de manera correcta.
+
+![imagen](img/figura_06.jpg)
+
+10. El siguiente valor a probar es el 6, el cual debe regresar el valor de "Fizz", de la siguiente forma:
+
+```java
+	@Test 
+	void seisEsFizz() {
+		assertEquals("Fizz", FizzBuzz.valorSecuencia(6));
+	}
+```
+
+Si ejecutamos la prueba, esta nuevamente fallará:
+
+![imagen](img/figura_07.jpg)
+
+11. Para hacer que la prueba pase, hay que hacer una ligera modificación a la primera condición, de la siguiente forma:
+
+```java
+		if(valor % 3 == 0) {
+			return "Fizz";
+		} 
+		
+```
+
+Si ejecutas nuevamente la prueba esta... ¿falla? La prueba no se ejecuta exitosamente, pero es una prueba anterior, una que ya funcionaba correctamtente. ¿Qué es lo que ocurre aquí? Agregamos una nueva funcionalidad y esta hizo que la aplicación dejara de funcionar en un lugar que no nos esperábamos. Con los test pudimos darnos cuenta de esto antes de liberar el producto =).
+
+Para arreglarlo, debemos hacer la siguiente modificación al código:
+
+```java
+	public static String valorSecuencia(int valor) {
+
+		if(valor == 0) {
+			return "0";
+		}
+		
+		if(valor % 3 == 0) {
+			return "Fizz";
+		} 
+		
+		if(5 == valor) {
+			return "Buzz";
+		}
+		
+		return String.valueOf(valor);
+	}
+```
+
+Si ejecutas nuevamente la aplicación, la prueba debe pasar correctamente. 
+
+12. El siguiente valor interesante es 10, el cual debe regresar "Buzz":
+
+```java
+	@Test 
+	void diezEsBuzz() {
+		assertEquals("Buzz", FizzBuzz.valorSecuencia(10));
+	}
+```
+
+Si ejecutas la prueba esta nuevamente fallará. 
+
+13. Para hacer pasar la prueba hay que hacer la ssiguiente modificación a la tercera condición:
+
+```java
+	if(valor % 5 == 0) {
+		return "Buzz";
+	}
+```
+
+La prueba nuevamente vuelve a pasar.
+
+14. El siguiente valor interesante es el 15, ya que este es divisible tanto por 3 como por 5, por lo que escribimos el código e la prueba:
+
+```java
+	@Test 
+	void quinceEsFizzBuzz() {
+		assertEquals("FizzBuzz", FizzBuzz.valorSecuencia(15));
+	}
+	
+```
+
+Si ejecutamos la prueba, esta nuevamente fallará.
+
+15. Para hacer que la prueba nuevamente pase, podemos hacer algo como lo siguiente:
+
+```java
+	public static String valorSecuencia(int valor) {
+
+		if(valor == 0) {
+			return "0";
+		}
+		
+		if(valor % 3 == 0 && valor % 5 == 0) {
+			return "FizzBuzz";
+		}
+		
+		if(valor % 3 == 0) {
+			return "Fizz";
+		} 
+		
+		if(valor % 5 == 0) {
+			return "Buzz";
+		}
+		
+		return String.valueOf(valor);
+	}
+```
+
+Si ejecutas la prueba, este nuevemente debe ser correcta.
+
+16. Ahora que ya hemos cubierto todos los casos, ¿podemos dar por terminado el ejemplo? Ya casí, pero aún no. Si bien este ya funciona aún hay que mejorar nuestro código productivo, ya que tenemos un método con muchas instrucciones return. Es mejor y más ordenado tener solo una, por lo que podemos hacer la siguiente modificación:
+
+```java
+	public static String valorSecuencia(int valor) {
+
+		String regreso = "";
+		
+		if(valor == 0) {
+			return "0";
+		}
+		
+		if(valor % 3 == 0 && valor % 5 == 0) {
+			regreso = "FizzBuzz";
+		}
+		
+		if(valor % 3 == 0) {
+			regreso =  "Fizz";
+		} 
+		
+		if(valor % 5 == 0) {
+			regreso = "Buzz";
+		}
+		
+		return regreso.isEmpty() ? String.valueOf(valor) : regreso;
+	}
+```
+El código ya se ve mucho más ordenado. Ejecuta nuevamente la prueba y... ¡UPS! algo se rompió. Que bueno que con nuestras pruebas unitarias nuevamente nos dimos cuenta de que algo estaba mal =).
+
+Arreglemos esto de la siguiente forma:
+
+```java
+	public static String valorSecuencia(int valor) {
+
+		String regreso = "";
+		
+		if(valor == 0) {
+			return "0";
+		}
+		
+		if(valor % 3 == 0) {
+			regreso =  "Fizz";
+		} 
+		
+		if(valor % 5 == 0) {
+			regreso = "Buzz";
+		}
+		
+		if(valor % 3 == 0 && valor % 5 == 0) {
+			regreso = "FizzBuzz";
+		}
+		
+		return regreso.isEmpty() ? String.valueOf(valor) : regreso;
+	}
+```
+
+Con esto la prueba nuevamente se ejecuta de manera correcta.
+
+17. El código se ve mejor después de la refactorización, sin embargo esas condiciones duplicadas pueden simplificarse si hacemos el siguiente cambio:
+
+```java
+	public static String valorSecuencia(int valor) {
+
+		String regreso = "";
+		
+		if(valor == 0) {
+			return "0";
+		}
+		
+		if(valor % 3 == 0) {
+			regreso +=  "Fizz";
+		} 
+		
+		if(valor % 5 == 0) {
+			regreso += "Buzz";
+		}
+		
+		
+		return regreso.isEmpty() ? String.valueOf(valor) : regreso;
+	}
+```
+
+Con esto, el codigo se simplifica y la prueba sigue pasando de forma correcta y podemos dar por terminado el ejercicio.
