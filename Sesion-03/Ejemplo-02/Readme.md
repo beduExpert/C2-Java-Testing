@@ -100,3 +100,84 @@ Recuerda resolver el problema de la forma más simple posible y refactorizar des
 3. Dentro de este proyecto crea una nueva clase llamada FizzBuzzTest. Como esta es una clase de prueba, debe estar en el paquete de pruebas de Maven: src/test/java. Al momento de crear el empaquetado de nuestra aplicación (ya sea un archivo jar o war) Maven excluirá todos los elementos de pruebas (clases, archivos de configuración, etc.). Así que podemos pensar en este como una zona segura para hacer nuestras pruebas.
 
 ![imagen](img/figura_02.png)
+
+4. Comenzaremos definiendo la prueba para un método principal de la aplicación, el cual debe cumplir con las siguientes reglas:
+ - Debe recibir un entero que sea mayor o igual o cero.
+ - Si es divisible entre tres debe regregsar "Fizz".
+ - Si es divisible entre cinco debe regresar "Buzz".
+ - Si es divisible entres tres y cinco debe regregsar "FizzBuzz".
+ - Si no se cumple ninguna de las tres condiciones anteriores, debe regresar el mismo número.
+ 
+ 5. Dentro de la clase de prueba comencemos con un método que se asegure que si recibe 0 como parámetro, este regrese el valor de 0:
+ 
+```java
+	@Test
+	void ceroEsCero() {
+		assertEquals("0", FizzBuzz.valorSecuencia("0"));
+	}
+```
+ 
+6. Si tratas de ejecutar la prueba, obtendrás un error de compilación ya que la clase FizzBuzz no existe todavía, y por lo tanto no tiene un método valorSecuencia; así que hay que agregar esta clase, en el código productivo del proyecto (src/main/java) y dentro de esta el método valorSecuencia:
+
+```java
+	public class FizzBuzz {
+		public static String valorSecuencia(String string) {
+			return "0";
+		}
+	}
+```
+
+Si volvemos a ejecutar la prueba esta debe pasar de forma correcta. 
+
+![imagen](img/figura_03.jpg)
+
+3. Agregaremos otra prueba para validar que "1" regresa el valor de "1", de esta forma:
+
+```java
+	@Test
+	void unoEsUno() {
+		assertEquals("1", FizzBuzz.valorSecuencia("1"));
+	}
+```
+
+Si ejecutamos esta prueba, debe fallar:
+
+![imagen](img/figura_04.jpg)
+
+4. Ahora, escriba el código que hace que la prueba pase; en este caso, será tan sencillo como modificar el método valorSecuencia de la siguiente forma:
+
+```java
+	public static String valorSecuencia(String string) {
+		return String.valueOf(string);
+	}
+```
+
+5. Ejecuta nuevamente la prueba y esta debe pasar de manera correcta:
+
+![imagen](img/figura_05.jpg)
+
+6. El siguiente paso debería ser probar el valor de "2", pero como esta prueba es similar a la anterior pasaremos a probar el valor de "3". Recordemos que este método en vez de regresar "3" debe regresar "Fizz", de la siguiente forma:
+
+```java
+	@Test
+	void tresEsFizz() {
+		assertEquals("Fizz", FizzBuzz.valorSecuencia("3"));
+	}
+```
+
+Si ejecutamos nuevamente la prueba esta debe fallar.
+
+7. Ahora, hay que escribir el código que haga pasar la prueba, en este caso la modificación queda de la siguiente forma:
+
+```java
+	public static String valorSecuencia(String string) {
+		
+		if("3".equals(string)) {
+			return "Fizz";
+		}
+		
+		return String.valueOf(string);
+	}
+```
+
+Si volvemos a ejecutar la preba esta pasará de manera correcta.
