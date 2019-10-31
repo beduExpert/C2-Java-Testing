@@ -1,29 +1,78 @@
- 
+## Reto 01: Completar los casos de prueba de la calculadora
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivo
+- Diseñar los casos de prueba necesarios para cubrir las otras 3 operaciones que puede hacer la calculadora del ejemplo 01
 
-### OBJETIVO 
+### Requisitos
+1. JDK 8 o superior
+2. IDE de tu preferencia
+3. Apache Maven
+4. JUnit 5
+5. Ejemplo 01 (Calculadora con palabras)
 
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
+### Desarrollo
+Este reto consiste en agregar al menos 3 casos de prueba necesarios para poder probar el funcionamiento de las operaciones de resta, multiplicación y división que realiza la calculadora del ejemplo. Para ello se seguirá la misma estructura que en el caso de prueba para la suma. No olvides verificar que obtienes los resultados esperados con las pruebas ejecutándolas después de añadirlas.
 
 <details>
+	<summary>Solución</summary>
+    1. Para poder resolver este reto, es necesario agregar un método por cada caso de prueba, para cada una de las operaciones que vamos a probar. De esta manera, la clase CalculadoraTest nos quedará de la siguiente manera:
+```java
+package org.bedu;
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+import static org.junit.jupiter.api.Assertions.*;
 
-![imagen](https://picsum.photos/200/300)
+class CalculadoraTest {
 
+    private Calculadora calc;
+
+    @BeforeEach
+    void setUp() {
+        //Arrange (se incluye en este método para no repetirlo en cada caso de prueba
+        calc = new Calculadora();
+    }
+
+    @Test
+    void calcularSumaTest() {
+        //Arrange
+        Double esperado = 4.0;
+        //Act
+        Double resultado = calc.calcular("sumar", 2.0, 2.0);
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+
+    @Test
+    void calcularRestaTest() {
+        //Arrange
+        Double esperado = 1.0;
+        //Act
+        Double resultado = calc.calcular("restar", 5.0, 4.0);
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+
+    @Test
+    void calcularMultiplicacionTest() {
+        //Arrange
+        Double esperado = 10.0;
+        //Act
+        Double resultado = calc.calcular("multiplicar", 5.0, 2.0);
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+
+    @Test
+    void calcularDivisionTest() {
+        //Arrange
+        Double esperado = 1.0;
+        //Act
+        Double resultado = calc.calcular("dividir", 2.0, 2.0);
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+}
+```
+</details>
