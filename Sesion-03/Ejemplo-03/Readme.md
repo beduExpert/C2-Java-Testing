@@ -16,11 +16,6 @@ Este reto consiste en implementar la Kata de nombres invertidos, la cual indica 
 
 Para este requerimiento plantearemos algunas reglas:
 
- - Si el nombre tiene algún prefijo, este debe ser eliminado en la salida. Por ejemplo: Sr. John Smith -> Smith, John.
- - Si el nombre tiene algún posfijo, este debe ser respetado. Por ejemplo: John Smith Jr. -> Smith, John Jr. o
- 	- John Smith Jr. -> Smith, John Jr.
-	- John Smith PhD. -> Smith, John PhD.
-	- John Smith Jr. PhD. -> Smith, John Jr. PhD.
  - Si la cadena de entrada tiene espacios adicionales en blanco, estos espacios deben ser eliminados en la salida. Por ejemplo: John      Smith -> Smith, John
  - Si el nombre es un valor nulo (null) se debe lanzar una NullPointerException
 	
