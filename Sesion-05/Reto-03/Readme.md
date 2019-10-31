@@ -24,6 +24,7 @@ Considera esos casos y otros que detectes, identificando a qué letra de la sigl
     1. Con la implementación actual sí, pero no existe ninguna prueba que nos ayude a comprobarlo.
     2. Se obtiene un NullPointerException no esperado, por lo que debemos incluir la corrección necesaria para lanzar un InvalidArgumentException.
     3. Se debe obtener el valor NaN (not a number) debido a que no existe ese valor, pero tampoco existe la prueba que lo compruebe.
+
 ```java
 @Test
     void parametrosCambiadosTest() throws InvalidArgumentException {
@@ -57,6 +58,7 @@ Considera esos casos y otros que detectes, identificando a qué letra de la sigl
 ```
 
 Además hay que agregar la siguiente condición al inicio del método calcular:
+
 ```java
 if(operacion == null){
             throw new InvalidArgumentException(new String[]{"Se esperaba el nombre de la operación"});
