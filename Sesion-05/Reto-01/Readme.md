@@ -16,6 +16,7 @@ Este reto consiste en agregar al menos 3 casos de prueba necesarios para poder p
 <details>
 	<summary>Solución</summary>
     1. Para poder resolver este reto, es necesario agregar un método por cada caso de prueba, para cada una de las operaciones que vamos a probar. De esta manera, la clase CalculadoraTest nos quedará de la siguiente manera:
+	
 ```java
 package org.bedu;
 
@@ -75,4 +76,5 @@ class CalculadoraTest {
     }
 }
 ```
+
 </details>
