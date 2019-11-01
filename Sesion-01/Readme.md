@@ -1,5 +1,5 @@
 
-## Sesión: Introducción a Testing
+## Sesión 01: Introducción a Testing
 
 ### OBJETIVOS 
 
