@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.bedu</groupId>
-  <artifactId>lectorPalabras</artifactId>
+  <artifactId>calculadora</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>lectorPalabras</name>
+  <name>calculadora</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,13 +23,20 @@
       <version>5.5.2</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.4.2</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
         </plugin>
       </plugins>
     </pluginManagement>
