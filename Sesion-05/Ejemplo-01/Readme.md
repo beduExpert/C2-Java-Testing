@@ -127,7 +127,22 @@ class CalculadoraTest {
 
 5. Las pruebas se pueden ejecutar mediante el IDE, o desde la consola ubicándose en la raíz del proyecto y ejecutando el comando `mvn clean test`. Se nos presentará el resumen de las pruebas ejecutadas y el resultado obtenido de una manera similar a la siguiente:
 ```
-[INFO] -------------------------------------------------------                                                          [INFO]  T E S T S                                                                                                       [INFO] -------------------------------------------------------                                                          [INFO] Running org.bedu.CalculadoraTest                                                                                 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.bedu.CalculadoraTest            [INFO]                                                                                                                  [INFO] Results:                                                                                                         [INFO]                                                                                                                  [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0                                                                 [INFO]                                                                                                                  [INFO] ------------------------------------------------------------------------                                         [INFO] BUILD SUCCESS                                                                                                    [INFO] ------------------------------------------------------------------------                                         [INFO] Total time:  5.475 s                                                                                             [INFO] Finished at: 2019-10-30T19:01:57-06:00                                                                           [INFO] ------------------------------------------------------------------------
+[INFO] -------------------------------------------------------                                                          
+[INFO]  T E S T S                                                                                                       
+[INFO] -------------------------------------------------------                                                          
+[INFO] Running org.bedu.CalculadoraTest                                                                                 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.bedu.CalculadoraTest            
+[INFO]                                                                                                                  
+[INFO] Results:                                                                                                         
+[INFO]                                                                                                                  
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0                                                                 
+[INFO]                                                                                                                  
+[INFO] ------------------------------------------------------------------------                                         
+[INFO] BUILD SUCCESS                                                                                                    
+[INFO] ------------------------------------------------------------------------                                         
+[INFO] Total time:  5.475 s                                                                                             
+[INFO] Finished at: 2019-10-30T19:01:57-06:00                                                                           
+[INFO] ------------------------------------------------------------------------
 ```
 
 6. De esta manera hemos implementado el primer caso de prueba para las pruebas unitarias de una clase.
