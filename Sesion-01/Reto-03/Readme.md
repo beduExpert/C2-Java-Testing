@@ -1,12 +1,12 @@
-## Validación de suposiciones usando JUnit
+## Reto 03: Validación de suposiciones usando JUnit
 
 ### OBJETIVO 
 
-- Validar la salida de la ejecución del método sumar de la clase SumadorLunar que se hizo en el Ejemplo-01
+- Validar que la salida de la ejecución del método sumar de la clase SumadorLunar que se hizo en el Ejemplo-01 sea correcta.
 
 #### DESARROLLO
 
-Realiza la implementación del método "suma" de la clase "SumadorLunar" visto en el Ejemplo-01; recuerda que el sumador lunar, la suma de dos digitos siempre da como resultado el digito más grande, por ejemplo: 
+Realiza la implementación del método "suma" de la clase "SumadorLunar" visto en el Ejemplo-01; recuerda que en un sumador lunar la suma de dos digitos siempre da como resultado el digito más grande, por ejemplo: 
 
 	 12
 	+25
@@ -23,14 +23,14 @@ Realiza la implementación del método "suma" de la clase "SumadorLunar" visto e
 	------
 	  269
 
-Para simplificar la programación, asumiremos que los dos números de entrada siepre tienen la misma longitud.
+Para simplificar la programación, asumiremos que los dos números de entrada siempre tienen la misma longitud.
 
 Como segundo paso, crea un par de pruebas unitarias que permitan comprobar la salida de la aplicación.
 
 <details>
 
 <summary>Solucion</summary>
-1. Implementar el método suma. Se propone la siguiente implementación pero no es la única que proporciona el resultado correcto:
+1. Implementa el método suma. Se propone la siguiente implementación pero no es la única que proporciona el resultado correcto:
 
 ```java
 	public class SumadorLunar {
@@ -60,7 +60,7 @@ Como segundo paso, crea un par de pruebas unitarias que permitan comprobar la sa
 ```
 
 
-2. Implementamos la clase de prueba, usando el método assertEquals:
+2. Implementa la clase de prueba, usando el método assertEquals:
 ```java
 	@Test
 	void sumaLunar() {
@@ -70,7 +70,7 @@ Como segundo paso, crea un par de pruebas unitarias que permitan comprobar la sa
 	}
 ```
 
-3. Ejecutamos la prueba y comprobamos que el resultado de todas las pruebas sea correcto.
+3. Ejecuta la prueba y comprueba que el resultado de todas las pruebas sea correcto.
 
 ![imagen](img/figura_01.png)
 
