@@ -1,10 +1,10 @@
 
-## White box Testing
+## Sesión 02: White box Testing
 
 ### OBJETIVOS 
 
-- Qué es este tipo de prueba y qué beneficios trae
-- Cuáles son las técncias de prueba que se pueden aplicar en el White box testing
+- Entender qué es este tipo de prueba y qué beneficios trae.
+- Aprender cuáles son las técncias de prueba que se pueden aplicar en el White box testing.
 - Crear árboles de ruta de nuestra aplicación para tomar decisiones sobre qué casos de prueba es más convenente ejecutar.
 
 #### ORGANIZACION DE LA CLASE 
