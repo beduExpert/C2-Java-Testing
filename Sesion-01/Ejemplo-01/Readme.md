@@ -1,4 +1,4 @@
-##Ejemplo 01: Instalación del ambiente de pruebas
+## Ejemplo 01: Instalación del ambiente de pruebas
 
 ### OBJETIVO
 
