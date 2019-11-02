@@ -42,7 +42,7 @@ El número a la izquierda de la instrucción representa esa instrucción en el g
 
 En el ejemplo anterior podemos observar que la complejidad ciclomática es 3.
 
-3. Corrobora el valor anterior usando el número de nodos y aristas. A modo de recordatorio, la formula es la siguiente:
+3. Corrobora el valor anterior usando el número de nodos y aristas. A modo de recordatorio, la fórmula es la siguiente:
 
 		V(G) = E - N + 2, donde
 		E = Número de Aristas
