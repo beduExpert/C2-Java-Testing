@@ -1,13 +1,15 @@
 
-## Complejidad Ciclomática
+## Reto 01: Complejidad Ciclomática
 
 ### OBJETIVO
 
-- Calcular la complejidad ciclomática de un bloque de código.
+- Calcular la complejidad ciclomática de un bloque de pseudo código.
 
 #### DESARROLLO
 
-1. Dibujar el gráfico de flujo del siguiente bloque de pseudo-código, el número a la izquierda de la instucción representa esa instrucción en el grafo:
+En este reto tendrás que calcular la complejidad ciclomática del siguiente pseudo código, usando al menos dos de las técnicas vistas durante los ejemplos. 
+
+El número a la izquierda de la instrucción representa esa instrucción en el grafo:
 
 		1) seleccionar_idioma()
   			2) SWITCH 
@@ -29,16 +31,18 @@
 <details>
 	<summary>Solucion</summary>
 
+1. Dibuja el grafo de flujo que representa al pseudo código anterior:
+
 ![imagen](img/figura_01.png)
 
-2. Calcular la complejidad ciclomática usando el método del número de regiones. Para ver claramente cada región un número en cada una de ellas.
+2. Calcula la complejidad ciclomática usando el método del número de regiones. Para ver claramente cada región te recomendamos dibujar cada uno de un color o poner un número en cada una de ellas.
 
 ![imagen](img/figura_02.png)
 
-En el ejemplo anterior, la complejidad ciclomática es 3.
 
+En el ejemplo anterior podemos observar que la complejidad ciclomática es 3.
 
-3. Corroborar el valor anterior usando el número de nodos y aristas. A modo de recordatorio, la formula es la siguiente:
+3. Corrobora el valor anterior usando el número de nodos y aristas. A modo de recordatorio, la formula es la siguiente:
 
 		V(G) = E - N + 2, donde
 		E = Número de Aristas
