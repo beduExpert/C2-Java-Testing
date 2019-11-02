@@ -1,5 +1,5 @@
 
-## Complejidad Ciclomática en código
+## Reto 03: Complejidad Ciclomática en código
 
 ### OBJETIVO
 
@@ -7,7 +7,7 @@
 
 #### DESARROLLO
 
-Calcula la complejidad ciclomática el siguiente bloque de código:
+Calcula la complejidad ciclomática del siguiente bloque de código:
 
 ```java
 	int strequal (char[] x, char[] y)
@@ -28,9 +28,9 @@ Calcula la complejidad ciclomática el siguiente bloque de código:
 ```
 
 <details>
-	<summary>Solucion</summary>
+	<summary>Solución</summary>
 
-1. Acomoda el código del ejemplo, de esta forma será mucho más fácil etiquetarlo y crear el gráfo de flujo.
+1. Acomoda el código del ejemplo, de esta forma será mucho más fácil etiquetarlo y crear el grafo de flujo.
 
 ```java
 	int strequal (char[] x, char[] y) { 
@@ -59,12 +59,12 @@ Calcula la complejidad ciclomática el siguiente bloque de código:
 ![imagen](img/figura_01.png)
 
 
-3. Dibujar el gráfico de flujo del siguiente bloque de código:
+3. Dibuja el gráfico de flujo:
 
 ![imagen](img/figura_02.png)
 
 
-4. Calcular la complejidad ciclomática usando el número de nodos y aristas. A modo de recordatorio, la formula es la siguiente:
+4. Calcula la complejidad ciclomática usando el número de nodos y aristas. A modo de recordatorio, la fórmula es la siguiente:
 
 		V(G) = E - N + 2, donde
 		E = Número de Aristas
@@ -82,9 +82,9 @@ Por lo tanto:
 		
 En el ejemplo anterior podemos comprobar que la complejidad ciclomática es 6.
 
-4. Corroborar el valor anteriores usando el método de los nodos predicado. Recuerda que los nodo predicado son aquellos nodos de condición, o los nodos de los que se despreden otros dos o más nodos.
+5. Corrobora el valor anteriores usando el método de los nodos predicado. Recuerda que los nodo predicado son aquellos nodos de condición, o los nodos de los que se despreden otros dos o más nodos.
 
-La formula para el cálculo de la complejidad ciclomática usando los nodos pedicado es:
+La fórmula para el cálculo de la complejidad ciclomática usando los nodos pedicado es:
 
 		V(G) = P + 1, donde
 		P = Número de nodos predicado
