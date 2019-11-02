@@ -1,5 +1,5 @@
 
-## Complejidad Ciclomática en código
+## Ejemplo 03: Complejidad Ciclomática en código
 
 ### OBJETIVO
 
@@ -11,6 +11,7 @@
 
 Tip: El código contiene además de instrucciones secuenciales (que se ejecutan siempre una después de la otra).
 
+```java
 	while (x < 100) {
   		if (a[x] % 2 == 0) {
     			paridad = 0;
@@ -35,17 +36,17 @@ Tip: El código contiene además de instrucciones secuenciales (que se ejecutan 
 	}
 
 	p = true;
-
+```
 
 ![imagen](img/figura_01.png)
 
 
-2. Dibujar el gráfico de flujo del siguiente bloque de código:
+2. Dibuja el gráfico de flujo del código anterior:
 
 ![imagen](img/figura_02.png)
 
 
-3. Calcular la complejidad ciclomática usando el número de nodos y aristas. A modo de recordatorio, la formula es la siguiente:
+3. Calcula la complejidad ciclomática usando el número de nodos y aristas. A modo de recordatorio, la fórmula es la siguiente:
 
 		V(G) = E - N + 2, donde
 		E = Número de Aristas
