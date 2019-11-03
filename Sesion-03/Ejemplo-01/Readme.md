@@ -31,7 +31,7 @@ Recuerda resolver el problema de la forma más simple posible y refactorizar des
 
 1. Crea un nuevo proyecto Maven en Eclipse llamado KataStringCalculator:
 
-![imagen](img/figura_01.jpg)
+![imagen](img/figura_01.png)
 
 2. Reemplaza el archivo pom.xml del proyecto con el siguiente:
 ```xml
