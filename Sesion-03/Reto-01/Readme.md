@@ -1,30 +1,31 @@
-## Kata Calculadora de Cadenas parte 2
+## Reto 01: Kata Calculadora de Cadenas parte 2
 
 ### OBJETIVO 
 
-- Continuar con el aprendizaje de TDD agregando requisitos adicionales a la calculadora de cadenas de el Ejercicio anterior
+- Continuar con el aprendizaje de TDD agregando requisitos adicionales a la calculadora de cadenas de el Ejercicio anterior.
 
 #### REQUISITOS 
 
-1. JDK 11.
-2. IDE Eclipse.
-3. JUnit 5
-4. Ejercicio-01 calculadora de Cadenas
+ 1. JDK 8 o superior
+ 2. IDE de tu preferencia
+ 3. Apache Maven
+ 4. JUnit 5
+ 5. Ejercicio-01 calculadora de Cadenas
 
 #### DESARROLLO
 
 En este reto tendrás que agregar algunas funcionalidades adicionales a la calculadora de cadenas visto en el primero ejemplo. 
 
+Recuerda: debes ir avanzando requisito por requisito; primero escribe el código de las pruebas; escribe solamente el código necesario para que la prueba que acabes de escribir pase de forma exitosa.
+
  - Requisito 1: Llamar al método add con números negtivos debe lanzar una excepción con el mensaje "no se admiten números negativos".
  - Requisito 2: El mensaje de error de la excepción lanzada debe contener el número negativo que se está pasando. Por ejemplo, si el -método recibe un -3 el mensaje debe decir "no se admiten números negativos [-3]".
  - Requisito 3: Si hay múltiples números negativos, el mensaje debe contenerlos a todos.
 
-Recuerda, debes ir avanzando requisito por requisito; primero escribe el código de las pruebas; escribe solamente el código necesario para que la prueba que acabes de escribir pase de forma exitosa.
-
 <details>
-	<summary>Solucion</summary>
+	<summary>Solución</summary>
 
-1. Para el primer requisito primero agregaremos nuestra prueba en la clase StringCalculatorTest:
+<p>1. Agrega la prueba en la clase StringCalculatorTest:</p>
 
 ```java
 	@Test
@@ -38,7 +39,7 @@ Recuerda, debes ir avanzando requisito por requisito; primero escribe el código
 	}
 ```
 
-Aquí, nuevament vemos que estamos tomando algunas decisiones de diseño, ya que estamos deciciendo que la excepción lanzada sea una IllegalArgumentException. En el código anterior, el método fail se llamará si add no lanza una exepción. En el bloque catch comprobamos que la excepción lanzada contenga el texto que estamos esperando.
+Aquí, nuevament vemos que estamos tomando algunas decisiones de diseño, ya que estamos decidiendo que la excepción lanzada sea una IllegalArgumentException. En el código anterior el método fail se llamará si add no lanza una exepción. En el bloque catch comprobamos que la excepción lanzada contenga el texto que estamos esperando.
 
 2. Ejecuta la prueba, esta debe fallar ya que la funcionalidad no está implementada aún (Rojo). 
 
@@ -60,19 +61,21 @@ Aquí, nuevament vemos que estamos tomando algunas decisiones de diseño, ya que
 	}
 ```
 
-4. Ejecuta nuevamente la prueba, con esto la misma debe ejecutarse de manera exitosa (Verde):
+4. Ejecuta nuevamente la prueba, con esto la misma debe pasar de manera exitosa (Verde):
 
 ![imagen](img/figura_02.png)
 
 
-5. Si eres observador, notaras que la línea que acabamos de agregar se parce mucho a la instrucción que 
+5. Si eres observador notaras que la línea que acabamos de agregar se parce mucho a la instrucción que está al final del método: 
 
+```java
 	Arrays.stream(numeros.split(",")).mapToInt(Integer::parseInt)
-	
+```
+
 Podemos aprovechar para refactorizar el código del metodo add para simplificarlo un poco. Primero agregamos el siguiente método:
 
 ```java
-		private IntStream getNumeros(String numeros) {
+	private IntStream getNumeros(String numeros) {
 		return Arrays.stream(numeros.split(",")).mapToInt(Integer::parseInt);
 	}
 ```
@@ -97,7 +100,7 @@ Como puedes ver, acabamos de simplificar el método y si ejecutas nuevamente la 
 ![imagen](img/figura_03.png)
 
 
-6. Ahora implementaremos el segundo requisito. El mensaje debe incluir el número negativo. Para esto nuevamente iniciaremos con la prueba:
+6. Ahora implementa el segundo requisito. El mensaje debe incluir en su texto el número negativo. Para esto nuevamente inicia escribiendo la prueba:
 
 ```java
 	@Test 
@@ -116,7 +119,7 @@ Como puedes ver, acabamos de simplificar el método y si ejecutas nuevamente la 
 
 ![imagen](img/figura_04.png)
 
-8. Implementa el código que haga que la prueba pase, modificaremos el método add de la siguiente forma:
+8. Implementa el código que haga que la prueba pase, modifica el método add de la siguiente forma:
 
 ```java
 	public int add(String numeros) {
@@ -137,7 +140,7 @@ Como puedes ver, acabamos de simplificar el método y si ejecutas nuevamente la 
 
 ![imagen](img/figura_05.png)
 
-10. Implementa el último requisito, si hay más de un número negativo el mensaje debe implementarlos todos. Nuevamente, comencemos con código de las pruebas:
+10. Implementa el último requisito, si hay más de un número negativo el mensaje debe contenerlos todos. Nuevamente, comienza con el código de la prueba:
 
 
 ```java
@@ -155,7 +158,7 @@ Como puedes ver, acabamos de simplificar el método y si ejecutas nuevamente la 
 Si ejecutas la prueba esta debe dar como resultado un error (Rojo).
 
 
-11. Escribe el codigo que haga que la prueba pase. En este caso modificaremos el método add de la siguiente forma:
+11. Escribe el código que haga que la prueba pase. En este caso modifica el método add de la siguiente forma:
 
 ```java
 	public int add(String numeros) {
@@ -174,7 +177,7 @@ Si ejecutas la prueba esta debe dar como resultado un error (Rojo).
 ```
 
 
-12. Ejecuta nuevamente tu prueba, en esta ocasión debe ejecutarse de manera correcta (Verde).
+12. Ejecuta nuevamente la prueba, en esta ocasión debe ejecutarse de manera correcta (Verde).
 
 ![imagen](img/figura_06.png)
 
