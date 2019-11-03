@@ -1,5 +1,5 @@
 
-## Kata FizzBuzz
+## Ejemplo 02: Kata FizzBuzz
 
 ### OBJETIVO
 
@@ -7,43 +7,45 @@
 
 #### REQUISITOS
 
-1. JDK 11
-2. IDE Eclipse
-3. JUnit 5
+ 1. JDK 8 o superior
+ 2. IDE de tu preferencia
+ 3. Apache Maven
+ 4. JUnit 5
+
 
 #### DESARROLLO
 
-Este es un juego clásico de programación. En él tu eres un niño de 11 años, cinco minutos antes de que termine la clase, tu profesor de matemáticas decide que la clase debe ser más "divertida" haciendo un "juego". Explica que va a señalar a cada uno de los miembros de la clase y pedirle que diga el siguiente número de la secuencia, iniciando en el 1. La parte "divertida" es que si el número es divisible entre 3 en vez de decir el número se debe decir "Fizz" y si es divisible entre 5 se debe decir "Buzz". 
+Este es un juego clásico de programación. En él tú eres un niño de 11 años, cinco minutos antes de que termine la clase, tu profesor de matemáticas decide que la clase debe ser más "divertida" haciendo un "juego". Explica que va a señalar a cada uno de los miembros de la clase y pedirle que diga el siguiente número de la secuencia, iniciando en el 1. La parte "divertida" es que si el número es divisible entre 3 en vez de decir el número se debe decir "Fizz" y si es divisible entre 5 se debe decir "Buzz". 
 
 Tu profesor comienza a señalar a cada uno de tus compañeros, y cada uno va diciendo alegremente "1", "2", "Fizz", "cuatro", "Buzz"... de repente, tu profesor te señala a tí... no sabes que decir así que comienzas a ponerte nervioso, se te seca la boca y tus manos comienzan a sudar hasta que finalmente logras decir "Fizz". Tu profesor continúa señalando al resto de tus compañeros.
 
 Para evitar el pasar verguenza frente a tus compañeros de clase, y puesto que eres un gran programador, se te ocurre imprimir la lista completa de toda la secuencia. Tu clase tiene 33 integrantes y hay tiempo para darle la vuelta tres veces antes de que suene la campana de salida. La siguiente clase es mañana así que pones manos en el teclado y comienzas a codificar. 
 
-Escribe un programa que imprima los números del 1 al 100. Si el número es múltiplo de 3 debe imprimir "Fizz" en ve del número y si el número es múltiplo de 5 debe imprimir "Buzz". Para números que son múltiplos de ambos se debe imprimir "FizzBuzz". 
+Escribe un programa que imprima los números del 1 al 100. Si el número es múltiplo de 3 debe imprimir "Fizz" en vez del número y si el número es múltiplo de 5 debe imprimir "Buzz". Para números que son múltiplos de ambos se debe imprimir "FizzBuzz". 
 
 Esta es una salida de ejemplo:
 
-1
-2
-Fizz
-4
-Buzz
-Fizz
-7
-8
-Fizz
-Buzz
-11
-Fizz
-13
-14
-FizzBuzz
-16
-17
-Fizz
-19
-Buzz
-... etc 
+	1
+	2
+	Fizz
+	4
+	Buzz
+	Fizz
+	7
+	8
+	Fizz
+	Buzz
+	11
+	Fizz
+	13
+	14
+	FizzBuzz
+	16
+	17
+	Fizz
+	19
+	Buzz
+	... etc 
 
 Las instrucciones son las siguienes: 
 - Haz una tarea a la vez, la intención es que aprendas a trabajar de forma incremental.
@@ -52,11 +54,12 @@ Las instrucciones son las siguienes:
 
 Recuerda resolver el problema de la forma más simple posible y refactorizar después de cada fase.
 
-1. Crea un nuevo proyecto Maven en Eclipse llamado KataFizzBuzz
+1. Crea un nuevo proyecto Maven llamado KataFizzBuzz
 
 ![imagen](img/figura_01.png)
 
-2. Reemplazar el archivo pom.xml del proyecto con el siguiente:
+2. Reemplaza el archivo pom.xml del proyecto con el siguiente, en el que agregamos JUnit 5 como framework para pruebas:
+
 ```xml
 	<project xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -97,18 +100,18 @@ Recuerda resolver el problema de la forma más simple posible y refactorizar des
 	</project>
 ```
 
-3. Dentro de este proyecto crea una nueva clase llamada FizzBuzzTest. Como esta es una clase de prueba, debe estar en el paquete de pruebas de Maven: src/test/java. Al momento de crear el empaquetado de nuestra aplicación (ya sea un archivo jar o war) Maven excluirá todos los elementos de pruebas (clases, archivos de configuración, etc.). Así que podemos pensar en este como una zona segura para hacer nuestras pruebas.
+3. Dentro de este proyecto crea una nueva clase llamada FizzBuzzTest. Como esta es una clase de prueba debe estar en el paquete de pruebas de Maven: src/test/java. Al momento de crear el empaquetado de nuestra aplicación (ya sea un archivo jar o war) Maven excluirá todos los elementos de pruebas (clases, archivos de configuración, etc.). Así que podemos pensar en este como una zona segura para hacer pruebas.
 
 ![imagen](img/figura_02.png)
 
-4. Comenzaremos definiendo la prueba para un método principal de la aplicación, el cual debe cumplir con las siguientes reglas:
+4. Comienza definiendo la prueba para un método principal de la aplicación, el cual debe cumplir con las siguientes reglas:
  - Debe recibir un entero que sea mayor o igual o cero.
  - Si es divisible entre tres debe regregsar "Fizz".
  - Si es divisible entre cinco debe regresar "Buzz".
  - Si es divisible entres tres y cinco debe regregsar "FizzBuzz".
  - Si no se cumple ninguna de las tres condiciones anteriores, debe regresar el mismo número.
  
- 5. Dentro de la clase de prueba comencemos con un método que se asegure que si recibe 0 como parámetro, este regrese el valor de "0":
+ 5. Dentro de la clase de prueba escribe un método que se asegure que si recibe 0 como parámetro, este regrese el valor de "0":
  
 ```java
 	@Test
@@ -117,7 +120,7 @@ Recuerda resolver el problema de la forma más simple posible y refactorizar des
 	}
 ```
  
-6. Si tratas de ejecutar la prueba, obtendrás un error de compilación ya que la clase FizzBuzz no existe todavía, y por lo tanto no tiene un método valorSecuencia; así que hay que agregar esta clase, en el código productivo del proyecto (src/main/java) y dentro de esta el método valorSecuencia:
+6. Si tratas de ejecutar la prueba, obtendrás un error de compilación ya que la clase FizzBuzz no existe todavía, y por lo tanto no tiene un método valorSecuencia; así que hay que agregar esta clase en el código productivo del proyecto (src/main/java) y dentro de esta el método valorSecuencia:
 
 ```java
 	public class FizzBuzz {
@@ -127,11 +130,11 @@ Recuerda resolver el problema de la forma más simple posible y refactorizar des
 	}
 ```
 
-Si volvemos a ejecutar la prueba esta debe pasar de forma correcta. 
+Si vuelves a ejecutar la prueba esta debe pasar de forma correcta. 
 
 ![imagen](img/figura_03.png)
 
-3. Agregaremos otra prueba para validar que 1 regresa el valor de "1", de esta forma:
+3. Agrega otra prueba para validar que 1 regresa el valor de "1", de esta forma:
 
 ```java
 	@Test
@@ -140,11 +143,11 @@ Si volvemos a ejecutar la prueba esta debe pasar de forma correcta.
 	}
 ```
 
-Si ejecutamos esta prueba, debe fallar:
+Si ejecutas esta prueba, debe fallar:
 
 ![imagen](img/figura_04.png)
 
-4. Ahora, escriba el código que hace que la prueba pase; en este caso, será tan sencillo como modificar el método valorSecuencia de la siguiente forma:
+4. Ahora, escribe el código que hace que la prueba pase; en este caso, será tan sencillo como modificar el método valorSecuencia de la siguiente forma:
 
 ```java
 	public static String valorSecuencia(int valor) {
@@ -156,7 +159,7 @@ Si ejecutamos esta prueba, debe fallar:
 
 ![imagen](img/figura_05.png)
 
-6. El siguiente paso debería ser probar el valor de 2, pero como esta prueba es similar a la anterior pasaremos a probar el valor de "3". Recordemos que este método en vez de regresar 3 debe regresar "Fizz", de la siguiente forma:
+6. El siguiente paso debería ser probar el valor de 2, pero como esta prueba es similar a la anterior pasaremos a probar el valor de "3". Recuerda que este método en vez de regresar 3 debe regresar "Fizz", de la siguiente forma:
 
 ```java
 	@Test
@@ -165,7 +168,7 @@ Si ejecutamos esta prueba, debe fallar:
 	}
 ```
 
-Si ejecutamos nuevamente la prueba esta debe fallar.
+Si ejecutas nuevamente la prueba esta debe fallar.
 
 7. Ahora, hay que escribir el código que haga pasar la prueba, en este caso la modificación queda de la siguiente forma:
 
@@ -180,9 +183,9 @@ Si ejecutamos nuevamente la prueba esta debe fallar.
 	}
 ```
 
-Si volvemos a ejecutar la preba esta pasará de manera correcta.
+Si ejecutas la prueba esta pasará de manera correcta.
 
-8. Hagamos algo similar para el valor "5", el cual debe regresar "Buzz", primero la prueba:
+8. Haz algo similar para el valor "5", el cual debe regresar "Buzz", primero la prueba:
 
 ```java
 	@Test
@@ -191,9 +194,9 @@ Si volvemos a ejecutar la preba esta pasará de manera correcta.
 	}
 ```
 
-Si ejecutamos la prueba esta no pasará.
+Si ejecutas la prueba esta no pasará.
 
-9. Coloquemos el código que haga pasar la prueba, en este caso:
+9. Coloca el código que haga pasar la prueba, en este caso:
 
 ```java
 	public static String valorSecuencia(int valor) {
@@ -210,7 +213,7 @@ Si ejecutamos la prueba esta no pasará.
 	}
 ```
 
-Si ejecutamos la prueba esta pasará de manera correcta.
+Si ejecutas la prueba esta pasará de manera correcta.
 
 ![imagen](img/figura_06.png)
 
@@ -223,7 +226,7 @@ Si ejecutamos la prueba esta pasará de manera correcta.
 	}
 ```
 
-Si ejecutamos la prueba, esta nuevamente fallará:
+Ejecuta la prueba, esta nuevamente fallará:
 
 ![imagen](img/figura_07.png) 
 
@@ -238,7 +241,7 @@ Si ejecutamos la prueba, esta nuevamente fallará:
 
 Si ejecutas nuevamente la prueba esta... ¿falla? La prueba no se ejecuta exitosamente, pero es una prueba anterior, una que ya funcionaba correctamtente. ¿Qué es lo que ocurre aquí? Agregamos una nueva funcionalidad y esta hizo que la aplicación dejara de funcionar en un lugar que no nos esperábamos. Con los test pudimos darnos cuenta de esto antes de liberar el producto =).
 
-Para arreglarlo, debemos hacer la siguiente modificación al código:
+Para arreglarlo, debes hacer la siguiente modificación al código:
 
 ```java
 	public static String valorSecuencia(int valor) {
@@ -272,7 +275,7 @@ Si ejecutas nuevamente la aplicación, la prueba debe pasar correctamente.
 
 Si ejecutas la prueba esta nuevamente fallará. 
 
-13. Para hacer pasar la prueba hay que hacer la ssiguiente modificación a la tercera condición:
+13. Para hacer pasar la prueba hay que hacer la siguiente modificación a la tercera condición:
 
 ```java
 	if(valor % 5 == 0) {
@@ -282,7 +285,7 @@ Si ejecutas la prueba esta nuevamente fallará.
 
 La prueba nuevamente vuelve a pasar.
 
-14. El siguiente valor interesante es el 15, ya que este es divisible tanto por 3 como por 5, por lo que escribimos el código e la prueba:
+14. El siguiente valor interesante es el 15, ya que este es divisible tanto por 3 como por 5; escribe el código de la prueba:
 
 ```java
 	@Test 
@@ -292,9 +295,9 @@ La prueba nuevamente vuelve a pasar.
 	
 ```
 
-Si ejecutamos la prueba, esta nuevamente fallará.
+Ejecuta la prueba, esta nuevamente fallará.
 
-15. Para hacer que la prueba nuevamente pase, podemos hacer algo como lo siguiente:
+15. Para hacer que la prueba nuevamente pase, puedes hacer algo como lo siguiente:
 
 ```java
 	public static String valorSecuencia(int valor) {
@@ -349,7 +352,7 @@ Si ejecutas la prueba, este nuevemente debe ser correcta.
 ```
 El código ya se ve mucho más ordenado. Ejecuta nuevamente la prueba y... ¡UPS! algo se rompió. Que bueno que con nuestras pruebas unitarias nuevamente nos dimos cuenta de que algo estaba mal =).
 
-Arreglemos esto de la siguiente forma:
+Arregla esto de la siguiente forma:
 
 ```java
 	public static String valorSecuencia(int valor) {
@@ -378,7 +381,7 @@ Arreglemos esto de la siguiente forma:
 
 Con esto la prueba nuevamente se ejecuta de manera correcta.
 
-17. El código se ve mejor después de la refactorización, sin embargo esas condiciones duplicadas pueden simplificarse si hacemos el siguiente cambio:
+17. El código se ve mejor después de la refactorización, sin embargo esas condiciones duplicadas pueden simplificarse con el siguiente cambio:
 
 ```java
 	public static String valorSecuencia(int valor) {
