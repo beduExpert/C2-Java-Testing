@@ -1,5 +1,5 @@
 
-## JUnit y TestNG
+## Sesión 04: JUnit y TestNG
 
 ### OBJETIVOS 
 
@@ -9,14 +9,14 @@
 
 #### ORGANIZACION DE LA CLASE 
 
-- Crear pruebas unitarias usando JUnit 5
+- Pruebas unitarias con JUnit 5
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
 
-- Crear pruebas unitarias usando TestNG
+- Pruebas unitarias con TestNG
 	- [Ejemplo 02](Ejemplo-02)
 	- [Reto 02](Reto-02)
 
-- Crear suites de pruebas usando TestNG
+- Suites de pruebas con TestNG
 	- [Ejemplo 03](Ejemplo-03)
 	- [Reto 03](Reto-03)
