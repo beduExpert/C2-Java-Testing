@@ -91,19 +91,21 @@ public class SeparadorPalabras {
 
 <details>
 	<summary>Solución</summary>
-    1. El primer paso para refactorizar es extraer una interface que exponga los métodos de LectorArchivos. Dicha interfaz quedará de la siguiente manera:
-    ```java
-    package org.bedu;
+   
+1. El primer paso para refactorizar es extraer una interface que exponga los métodos de LectorArchivos. Dicha interfaz quedará de la siguiente manera:
 
+```java
+    package org.bedu;
+    
 import java.io.IOException;
 
 public interface Lector {
     String leerArchivo(String nombreArchivo) throws IOException;
 }
-    ```
+```
+ 2. Haremos que LectorArchivos implemente la interfaz Lector:
 
-    2. Haremos que LectorArchivos implemente la interfaz Lector:
-    ```java
+```java
     package org.bedu;
 
 import java.io.IOException;
@@ -117,10 +119,12 @@ public class LectorArchivos implements Lector {
         return new String(archivo);
     }
 }
-    ```
 
-    3. Agregaremos un constructor a SeparadorPalabras para recibir la implementación de Lector:
-    ```java
+```
+
+3. Agregaremos un constructor a SeparadorPalabras para recibir la implementación de Lector:
+ 
+ ```java
     package org.bedu;
 
 import java.io.IOException;
@@ -144,10 +148,12 @@ public class SeparadorPalabras {
         return Arrays.asList(palabras);
     }
 }
-    ```
 
-    4. Crearemos la clase falsa que implemente Lector en src/test/java:
-    ```java
+```
+
+4. Crearemos la clase falsa que implemente Lector en src/test/java:
+ 
+```java
     package org.bedu;
 
 import java.io.IOException;
@@ -158,10 +164,11 @@ public class LectorArchivosFalso implements Lector {
         return "palabras,separadas,por,coma";
     }
 }
-    ```
+```
 
-    5. Finalmente podremos añadir nuestros casos de prueba en la clase SeparadorPalabrasTest:
-    ```java
+5. Finalmente podremos añadir nuestros casos de prueba en la clase SeparadorPalabrasTest:
+ 
+ ```java
     package org.bedu;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -190,5 +197,6 @@ class SeparadorPalabrasTest {
         assertEquals(numPalabras, palabras.size());
     }
 }
-    ```
+```
+
 </details>
