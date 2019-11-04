@@ -1,4 +1,4 @@
-## Kata Nombre Invertido parte 2
+## Reto 03: Kata Nombre Invertido parte 2
 
 ### OBJETIVO 
 
@@ -6,14 +6,14 @@
 
 #### REQUISITOS 
 
-1. JDK 8
+1. JDK 8 o superiór.
 2. JUnit 5.
-3. IDE Eclipse.
-4. Código del Ejemplo-02 Kata nombre invertido
+3. IDE de tu preferencia.
+4. Código del Ejemplo-03: Kata nombre invertido
 
 #### DESARROLLO
 
-Agregaremos dos requerimmientos adicionales a la Kata de Nombre invertido del Ejemplo-03:
+Agregaremos dos requerimientos adicionales a la Kata de Nombre invertido del Ejemplo-03:
 
  - Si el nombre tiene algún prefijo (también llamado honorífico), este debe ser eliminado en la salida. Por ejemplo: Sr. John Smith -> Smith, John.
  - Si el nombre tiene algún posfijo, este debe ser respetado. Por ejemplo: John Smith Jr. -> Smith, John Jr. o
@@ -24,9 +24,9 @@ Agregaremos dos requerimmientos adicionales a la Kata de Nombre invertido del Ej
 <details>
 	<summary>Solucion</summary>
 	
-1. Abre el código del Ejemplo-02 Kata Nombre Invertido.
+1. Abre el código del Ejemplo-03 Kata Nombre Invertido.
 
-2. Agrega la prueba para validar el primer requerimiento:
+2. Agrega la prueba para validar el primer requerimiento en el que eliminamos el honorífico del nombre:
 
 ```java
 	@Test
@@ -55,6 +55,7 @@ Ejecuta la prueba para que compruebes que falla.
 		return elementosNombre.get(0);
 	}
 ```
+
 En el código anterior, reemplazamos el arrelo de String que veníamos usando, con un ArrrayList; de esta forma se facilita el eliminar el elemento del índice indicado (0).
 
 Ejecuta nuevamente la prueba para comprobar que funciona correctamente:
@@ -136,7 +137,7 @@ Ejecuta la prueba, la cual no debe pasar.
 
 Ejecuta nuevamente la prueba para comprobar que todo funciona de forma correcta.
 
-8. Agrega una última prueba para valir que se mantienen los postfijos:
+8. Agrega una última prueba para validar que se mantienen los postfijos:
 
 ```java
 	@Test
