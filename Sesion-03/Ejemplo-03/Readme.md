@@ -1,4 +1,4 @@
-## Kata Nombre Invertido
+## Ejemplo 03: Kata Nombre Invertido
 
 ### OBJETIVO 
 
@@ -6,22 +6,25 @@
 
 #### REQUISITOS 
 
-1. JDK 8
+1. JDK 8 o superiór.
 2. JUnit 5.
-3. IDE Eclipse.
+3. IDE de tu preferencia.
 
 #### DESARROLLO
 
-Este reto consiste en implementar la Kata de nombres invertidos, la cual indica que dado un nombre, por ejemplo: John Smith, la aplicación debe regresar el nombre en e formato Apellido, Nombre; en el ejemplo anterior la salida esperada es: Smith, John.
+Este reto consiste en implementar la Kata de nombres invertidos, la cual indica que dado un nombre, por ejemplo: John Smith, la aplicación debe regresar el nombre en el formato Apellido, Nombre; en el ejemplo anterior la salida esperada es: Smith, John.
 
-Para este requerimiento plantearemos algunas reglas:
+Para este requerimiento planteamos algunas reglas:
 
- - Si la cadena de entrada tiene espacios adicionales en blanco, estos espacios deben ser eliminados en la salida. Por ejemplo: John      Smith -> Smith, John
- - Si el nombre es un valor nulo (null) se debe lanzar una NullPointerException
+ - Si la cadena de entrada tiene espacios adicionales en blanco, estos espacios deben ser eliminados en la salida. Por ejemplo: 
+ 
+	John               Smith -> Smith, John
+	
+ - Si el nombre es un valor nulo (null) se debe lanzar una NullPointerException.
 	
 1. Crea un nuevo proyecto Maven en Eclipse llamado KataNameInverter
 
-2. Reemplazar el archivo pom.xml del proyecto con el siguiente:
+2. Reemplaza el archivo pom.xml del proyecto con el siguiente, en el que colocamos JUnit 5 como framework para pruebas unitarias:
 ```xml
 	<project xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -62,11 +65,11 @@ Para este requerimiento plantearemos algunas reglas:
 	</project>
 ```
 
-3. Dentro de este proyecto crea una nueva clase llamada NameInverterTest. Como esta es una clase de prueba, debe estar en el paquete de pruebas de Maven: src/test/java. Al momento de crear el empaquetado de nuestra aplicación (ya sea un archivo jar o war) Maven excluirá todos los elementos de pruebas (clases, archivos de configuración, etc.). Así que podemos pensar en este como una zona segura para hacer nuestras pruebas.
+3. Dentro de este proyecto crea una nueva clase llamada NameInverterTest. Como esta es una clase de prueba debe estar en el paquete de pruebas de Maven: src/test/java. Al momento de crear el empaquetado de nuestra aplicación (ya sea un archivo jar o war) Maven excluirá todos los elementos de pruebas (clases, archivos de configuración, etc.). Así que podemos pensar en este como una zona segura para hacer pruebas.
 
 ![imagen](img/figura_01.png)
 
-4. Comencemos con la prueba más simple, en el que se validamos si el nombre recibido es null. Según los requisitos, en ese caso se debe lanzar una NullPointerException.
+4. Comienza con la prueba más simple, en el que se valide si el nombre recibido es null. Según los requisitos, en ese caso se debe lanzar una NullPointerException.
 
 ```java
 	@Test
@@ -82,11 +85,11 @@ Para este requerimiento plantearemos algunas reglas:
 	}
 ```
 
-Como podemos ver, aquí ya estamos tomando nuevameente decisiones de diseño. Lo primero es que la clase que implementará la funcionalidad se llama NameInverter, y la funcionalidad principal será implementada en un método llamado invierte, el cual es estático y recibe el valor (en este caso el nombre) a invertir.
+Como podemos ver, aquí estamos tomando decisiones de diseño. Lo primero es que la clase que implementará la funcionalidad se llama NameInverter, y la funcionalidad principal será implementada en un método llamado invierte, el cual es estático y recibe el valor (en este caso el nombre) a invertir.
 
-Si ejecutamos nuestra prueba, esta nisiquiera debe compilar ya que la clase NameInverter no existe.
+Ejecuta la prueba, esta ni siquiera debe compilar ya que la clase NameInverter no existe.
 
-5. Escribe el código más simple que haga que pase la prueba:
+5. Escribe el código más simple que haga que pase la prueba, en este caso podemos lanzar directamente la NullPointerException:
 
 ```java
 	public class NameInverter {
@@ -95,11 +98,11 @@ Si ejecutamos nuestra prueba, esta nisiquiera debe compilar ya que la clase Name
 		}
 	}
 ```
-Si ejecutas nuevamente la prueba, esta debe pasar de manera correcta:
+Si ejecutas nuevamente la prueba esta debe pasar de manera correcta:
 
 ![imagen](img/figura_02.png)
 	
-6. En la siguiente prueba pasaremos un nombre en forma de una cadena vacía Como no se indica qué debe pasar en este caso, regregsaremos también una cadena vacía como nombre:
+6. En la siguiente prueba pasa un nombre en forma de una cadena vacía. Como en los requerimientos no se indica qué debe pasar en este caso, puedes regresar también una cadena vacía como nombre:
 
 ```java
 	@Test
@@ -108,9 +111,9 @@ Si ejecutas nuevamente la prueba, esta debe pasar de manera correcta:
 	}
 ```
 
-Nuevamente si ejecutas la prueba esta fallará. 
+Si ejecutas la prueba esta fallará. 
 
-7. Escribe el código mínimo para que la prueba pase, en este caso tenemos: 
+7. Escribe el código mínimo para que la prueba pase, en este caso: 
 
 ```java
 	public static String invierte(String nombre) {
@@ -123,9 +126,9 @@ Nuevamente si ejecutas la prueba esta fallará.
 	}
 ```
 
-Ejecuta tu prueba para comprobar que esta nuevamente pasa de manera correcta.
+Ejecuta la prueba para comprobar que esta nuevamente pasa de manera correcta.
 
-8. En la siguiente prueba verificaremos qué pasa si solo pasamos un nombre (es decir: sin apellido). En ese caso regresaremos el mismo nombre:
+8. En la siguiente prueba verifica qué pasa si solo pasamos un nombre (es decir: sin apellido). En ese caso regresaremos el mismo nombre:
 
 ```java
 	@Test
@@ -147,7 +150,7 @@ Ejecuta tu prueba para comprobar que esta nuevamente pasa de manera correcta.
 	}
 ```
 
-10. En la siguiente prueba probarás la funcionalidad core de la Kata, en la que pasando un nombre y apellido se debe regresar el valor con el formato apellido, nombre:
+10. En la siguiente prueba probarás la funcionalidad principal de la Kata, en la que pasando un nombre y apellido se debe regresar el valor con el formato apellido, nombre:
 
 ```java
 	@Test
@@ -176,7 +179,7 @@ Ejecuta tu prueba para comprobar que esta nuevamente pasa de manera correcta.
 
 Ejecuta nuevamente la prueba para que compruebes que funcionó correctamente.
 
-12. Prueba el requerimiento que indica que los espacios en blanco excedentes deben eliminarse. Esto podemos comprobarlo con la siguiente prueba unitaria.
+12. Prueba el requerimiento que indica que los espacios en blanco excedentes deben eliminarse. Esto puedes comprobarlo con la siguiente prueba unitaria.
 
 ```java
 	@Test 
