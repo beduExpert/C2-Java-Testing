@@ -18,7 +18,7 @@ Para este requerimiento planteamos algunas reglas:
 
  - Si la cadena de entrada tiene espacios adicionales en blanco, estos espacios deben ser eliminados en la salida. Por ejemplo: 
  
-	John               Smith -> Smith, John
+		John               Smith -> Smith, John
 	
  - Si el nombre es un valor nulo (null) se debe lanzar una NullPointerException.
 	
