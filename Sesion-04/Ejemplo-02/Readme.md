@@ -1,4 +1,4 @@
-## Calculadora de área y perímetro con pruebas parametrizables
+## Ejemplo 02: Calculadora de área y perímetro con pruebas parametrizables
 ### Objetivo
 - Aplicar de manera práctica los conocimientos recién adquiridos sobre el framework de pruebas TestNG
 
