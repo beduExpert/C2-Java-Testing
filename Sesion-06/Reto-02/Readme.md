@@ -1,29 +1,26 @@
- 
+## Reto 02: Corregir los defectos encontrados por PMD
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivo
+- Basarse en los resultados reportados por una herramienta de análisis estático de código para realizar las correcciones necesarias al código fuente.
+- Encontrar de manera práctica problemas comunes en el diseño de código y cómo pueden mitigarse.
 
-### OBJETIVO 
+### Requisitos
+1. JDK 8 o superior
+2. IDE de tu preferencia
+3. Apache Maven
+4. Completar el reto 01 (Analizar los resultados de un código con problemas de calidad)
 
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
+### Desarrollo
+Durante el desarrollo del reto anterior se encontraron algunos problemas en la aplicación administradora de usuarios. Para este reto tendrás que realizar la corrección de los problemas encontrados ayudándote del reporte de PMD.
 
 <details>
+	<summary>Solución</summary>
+1. El primer problema encontrado consiste en la comparación de Strings usando el operador `==`, esto es un problema debido a que en Java solo se compara la referencia al String y no el contenido de éste. Para realizar una comparación correcta se debe emplear el método `string1.equals(string2)`.
+    
+2. Otro problema es el constante empleo de variables inútiles para almacenar un resultado que se va a retornar inmediatamente. Esto debe evitarse para no crear una variable que no vamos a utilizar.
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+3. Los bloques try/catch contienen varios problemas: empezando por hacer un catch de excepciones genéricas, que puede enmascarar problemas en la aplicación. El segundo problema es la existencia de bloques catch vacíos, esta práctica también es un problema porque puede hacer muy difícil encontrar problemas en la lógica de la aplicación.
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+4. Respecto a las sentencias if, éstas deben simplificarse evitando comparar valores booleanos con true y false, pues directamente proporcionan un valor de éstos. Debemos evitar también que el cuerpo de éstas esté vacío.
 
-![imagen](https://picsum.photos/200/300)
-
+</details>
