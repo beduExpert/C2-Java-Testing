@@ -53,9 +53,9 @@ Si ejecutas la prueba esta deberá fallar ya que no se está tomando en cuenta e
 	}
 ```
 
-3. Ahora agrega una validación para la segunda recomendación, en donde probaremos los valores extremos. En este caso ya que el valor pequeño podemos usar el 0 (ya que ya validamos los números negativos). En el caso de los valores grandes probaremos el valor máximo de los enteros, representado por la constante ***Integer.MAX_VALUE***.
+3. Ahora agrega una validación para la segunda recomendación, en donde probaremos los valores extremos. En este caso ya que el valor pequeño podemos usar el 0 (ya que ya validamos los números negativos). En el caso de los valores grandes no tenemos ningún problema con aceptarlos, por lo que no agregaremos ninguna validación para estos.
 
-Separa estos en dos casos de pruebas independientes, el primero para el cero, el cual esperamos que lance también una IllegalArgumentException:
+En el caso del cero esperamos que lance también una IllegalArgumentException:
 
 ```java
     @Test
@@ -82,6 +82,6 @@ Si ejecutas la prueba esta debe fallar.
 ```
 Ejecuta la prueba y esta debe pasar correctamente.
 
-
+5. Repite los mismos pasos para las pruebas faltantes, recuerda que tambien debes hacerlo para la clase **CalculadoraArea**.
 
 </details>
