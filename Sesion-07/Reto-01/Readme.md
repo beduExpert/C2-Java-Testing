@@ -187,21 +187,25 @@ class UsuariosServiceTest {
 
 <details>
 	<summary>Solución</summary>
-    1. El primer paso consiste en agregar las propiedades necesarias a la clase de prueba para poder crear y utilizar los mocks, para ello agregaremos los siguientes atributos con sus anotaciones:
-    ```java
+
+1. El primer paso consiste en agregar las propiedades necesarias a la clase de prueba para poder crear y utilizar los mocks, para ello agregaremos los siguientes atributos con sus anotaciones:
+    
+```java
     @Mock
     private ConectorHttp api;
     @InjectMocks
     private UsuariosService servicio;
-    ```
+```
 
-    2. Después, dentro del método setUp agregaremos la siguiente línea que le dirá a Mockito dónde insertar nuestro objeto Mock:
-    ```java
+2. Después, dentro del método setUp agregaremos la siguiente línea que le dirá a Mockito dónde insertar nuestro objeto Mock:
+
+```java
 	MockitoAnnotations.initMocks(this);
-    ```
+```
 
-	3. Finalmente, podremos describir el comportamiento esperado en cada uno de los casos de prueba, así como las aserciones correspondientes y los métodos de utilería para usar de apoyo en la creación de objetos:
-	```java
+3. Finalmente, podremos describir el comportamiento esperado en cada uno de los casos de prueba, así como las aserciones correspondientes y los métodos de utilería para usar de apoyo en la creación de objetos:
+	
+```java
     package org.bedu;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -288,5 +292,6 @@ class UsuariosServiceTest {
         return usuario;
     }
 }
-    ```
+```
+
 </details>
