@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
+
 class CalculadoraAreaTest {
 
     CalculadoraArea calc;
@@ -17,6 +19,20 @@ class CalculadoraAreaTest {
     @Test
     public void rectanguloTest(){
         double resultado = calc.rectangulo(2, 4);
-        assertEquals(10, resultado);
+        assertEquals(8, resultado);
+    }
+    
+    @Test()
+    void rectanguloAreaNegativa() {
+    	Assertions.assertThrows(IllegalArgumentException.class, () -> {
+    		calc.cuadrado(-10);
+    	});
+    }
+    
+    @Test
+    void rectanguloLimitesMinimos() {
+    	Assertions.assertThrows(IllegalArgumentException.class, () -> {
+    		calc.cuadrado(0);
+    	});
     }
 }

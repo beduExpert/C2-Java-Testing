@@ -2,19 +2,24 @@ package org.bedu.geometria;
 
 public class CalculadoraArea {
 
-    public double cuadrado(double lado){
-        return lado * lado;
-    }
+	public double cuadrado(double lado) {
 
-    public double rectangulo(double base, double altura){
-        return base * altura;
-    }
+		if (lado <= 0) {
+			throw new IllegalArgumentException("No se admiten números negativos.");
+		}
 
-    public double triangulo(double base, double altura){
-        return base * altura / 2;
-    }
+		return lado * lado;
+	}
 
-    public double circulo(double radio){
-        return Math.PI * Math.pow(radio, 2);
-    }
+	public double rectangulo(double base, double altura) {
+		return base * altura;
+	}
+
+	public double triangulo(double base, double altura) {
+		return base * altura / 2;
+	}
+
+	public double circulo(double radio) {
+		return Math.PI * Math.pow(radio, 2);
+	}
 }
