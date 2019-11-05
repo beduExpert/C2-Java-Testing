@@ -1,11 +1,10 @@
+## Sesión 07: Herramientas de Test: Mockito
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
+### Objetivos
+- Comprender y aplicar los conceptos de Mocking y Stubbing durante el desarrollo de pruebas de software.
+- Evitar dependencias entre módulos de software durante las pruebas unitarias para asegurar que éstas verifican la funcionalidad de cada componente de manera correcta.
+- Aprender de manera práctica el uso del framework Mockito para el diseño de objetos falsos que permitirán realizar pruebas unitarias.
 
-## Titulo de la Sesion 
-
-### OBJETIVOS 
-
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
 
 #### ORGANIZACION DE LA CLASE 
 
