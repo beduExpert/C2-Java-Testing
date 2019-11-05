@@ -1,16 +1,16 @@
+## Sesión 06: Test quality
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
+### Objetivos
+ - Conocer el concepto de calidad en el software y en qué se diferencia del concepto de testing.
+ - Conocer algunas herramientas y métricas que ayudan a asegurar la calidad del software.
+ - Explorar el concepto de deuda técnica y cómo se origina.
 
-## Titulo de la Sesion 
-
-### OBJETIVOS 
-
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
 
 #### ORGANIZACION DE LA CLASE 
 
-- Tema que veran en el ejemplo
-
+- Instalacion de una herramienta para pruebas de calidad
 	- [Ejemplo 01](Ejemplo-01)
+	
+-Análisis de resultados de código con problemas de calidad
 	- [Reto 01](Reto-01)
 
