@@ -18,9 +18,11 @@ Esta aplicación ya cuenta con la configuración necesaria para emplear JUnit 5 
 
 <details>
 	<summary>Solución</summary>
-    1. El primer paso consiste en crear la clase PagosServiceTest dentro de `src/test/java` en el paquete org.bedu.retoBaseDatos.service para crear las pruebas unitarias del servicio.
-    2. Una vez que hayamos creado la clase, le agregaremos los atributos necesarios para la prueba: una instancia de PagosService y una de PagosRepository, junto con sus correspondientes anotaciones para indicarle a Mockito dónde actuar:
-    ```java
+
+1. El primer paso consiste en crear la clase PagosServiceTest dentro de `src/test/java` en el paquete org.bedu.retoBaseDatos.service para crear las pruebas unitarias del servicio.
+2. Una vez que hayamos creado la clase, le agregaremos los atributos necesarios para la prueba: una instancia de PagosService y una de PagosRepository, junto con sus correspondientes anotaciones para indicarle a Mockito dónde actuar:
+    
+```java
      @Mock
     private PagosRepository repositorio;
     @InjectMocks
@@ -33,10 +35,11 @@ Esta aplicación ya cuenta con la configuración necesaria para emplear JUnit 5 
     void setUp() {
         MockitoAnnotations.initMocks(this);
     }
-    ```
+```
 
-    4. Ahora, toca el turno de agregar cada uno de los métodos de prueba, recordando probar la funcionalidad de los métodos públicos del servicio. De esa forma, los métodos de prueba quedan:
-    ```java
+4. Ahora, toca el turno de agregar cada uno de los métodos de prueba, recordando probar la funcionalidad de los métodos públicos del servicio. De esa forma, los métodos de prueba quedan:
+
+```java
     @Mock
     private PagosRepository repositorio;
     @InjectMocks
@@ -91,7 +94,8 @@ Esta aplicación ya cuenta con la configuración necesaria para emplear JUnit 5 
     private List<Pago> crearListaPagos(){
         return Collections.singletonList(crearPago());
     }
-    ```
+```
 
-    5. De esta forma hemos creado un servicio que depende de una conexión a una base de datos y hemos realizado pruebas de su funcionalidad sin depender de una conexión real ni de trabajar con información completa.
+5. De esta forma hemos creado un servicio que depende de una conexión a una base de datos y hemos realizado pruebas de su funcionalidad sin depender de una conexión real ni de trabajar con información completa.
+
 </details>
