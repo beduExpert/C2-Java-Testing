@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreporteDiario_promotor" pageWidth="572" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a8606750-f7fa-48a1-968e-f86dbb2ae76b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="marchand"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="net.sf.jasperreports.export.xls.white.page.background" value="false"/>
+	<parameter name="promotorId" class="java.lang.Long"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select e.nombre_establecimiento "establecimiento", 
+              DATE_FORMAT(v.fecha, "%H:%i") "horaVisita" 
+ from establecimiento e 
+     join visita v on e.id_establecimiento = v.fk_establecimiento 
+where DATE_FORMAT(v.fecha, "%Y-%m-%d") = $P{fecha} 
+and v.fk_usuario = $P{promotorId}]]>
+	</queryString>
+	<field name="establecimiento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="establecimiento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="establecimiento"/>
+	</field>
+	<field name="horaVisita" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="horaVisita"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="286" height="17" uuid="11fe9906-a0a8-4222-a530-73fbf57e0af3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Establecimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="0" width="286" height="17" uuid="86889fb3-dc51-4d53-8ccc-1d37749716bc"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Hora de la visita]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="286" height="17" uuid="69cc2d4b-5b40-4faf-8cb0-0f8e74c03491"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{establecimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="0" width="286" height="17" uuid="e18c56e2-dc8f-43f4-bd81-fc8bbbf958c7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{horaVisita}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
