@@ -1,11 +1,13 @@
+## Sesión 08: Herramientas de Test II: SonarQube
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
-
-## Titulo de la Sesion 
+SonarQube es una herramienta que nos ayuda a definir métricas de calidad y evaluar nuestros proyectos.
 
 ### OBJETIVOS 
 
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
+- Te familiarizarás con la instalación y uso de SonarQube. Realizando análisis para identificar y resolver problemas.
+
+_Nota_: SonarQube no está pensado para ser instalado en un equipo de desarrollo (laptop, PC), sino en un servidor. Estos ejercicios son méramente ilustrativos y no se recomienda establecer SonarQube como un servicio del sistema.
+
 
 #### ORGANIZACION DE LA CLASE 
 
