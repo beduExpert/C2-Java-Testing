@@ -10,7 +10,13 @@
 
 - Instalacion de una herramienta para pruebas de calidad
 	- [Ejemplo 01](Ejemplo-01)
-	
--Análisis de resultados de código con problemas de calidad
 	- [Reto 01](Reto-01)
+	
+ - Análisis de calidad mediante PMD en línea de comandos
+ 	- [Ejemplo 02](Ejemplo-02)
+	- [Reto 02](Reto-02)
+	
+ - Problemas comunes
+ 	- [Ejemplo 03](Ejemplo-03)
+	- [Reto 03](Reto-03)
 
