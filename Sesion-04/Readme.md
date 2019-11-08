@@ -1,11 +1,13 @@
 
 ## Sesión 04: JUnit y TestNG
 
+JUnit y TestNG son framework que permiten la realización de pruebas en Java. Estas herramientas permiten crear pruebas en diferentes niveles y cada una posee diferentes cualidades que nos ayudan en el diseño de pruebas para nuestro software. En esta sesión se analizará el ámbito de cobertura de cada una de estas herramientas y el modo básico para usar cada una.
+
 ### OBJETIVOS 
 
-- Crear pruebas unitarias usando JUnit 5
-- Crear pruebas unitarias usando TestNG
-- Crear suites de pruebas usando TestNG
+ - Familiarizarse con ambos framework de pruebas
+ - Conocer el alcance de cada uno de ellos
+ - Emplearlos de manera práctica en el diseño de pruebas para una aplicación
 
 #### ORGANIZACION DE LA CLASE 
 
