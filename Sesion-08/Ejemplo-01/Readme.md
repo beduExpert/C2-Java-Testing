@@ -1,4 +1,4 @@
-## SonarQube: Ejercicio 1
+## Ejemplo 01: Instalación de SonarQube
 
 
 #### Descarga del servidor
