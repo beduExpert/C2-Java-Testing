@@ -1,4 +1,4 @@
-## Agregar pruebas al factorial
+## Reto 03: Agregar pruebas al factorial
 ### Objetivo
 - Practicar la creación de suites de pruebas mediante la adición de casos adicionales al proyecto de factorial empleado en el ejemplo 3.
 
@@ -16,9 +16,11 @@
 
 <details>
 	<summary>Solución</summary>
-    1. Para agregar una nueva suite de pruebas, primero debemos agregar los métodos necesarios a FactorialTest, uno para probar valores negativos y otro para probar valores mayores a 20:
+
+1. Para agregar una nueva suite de pruebas, primero debemos agregar los métodos necesarios a FactorialTest, uno para probar valores negativos y otro para probar valores mayores a 20:
+	
 ```java
-@Test(expectedExceptions = InvalidArgumentException.class)
+    @Test(expectedExceptions = InvalidArgumentException.class)
     public void testFactorialMayor() {
         factorial.calcular(21);
     }
@@ -28,7 +30,8 @@
         factorial.calcular(-1);
     }
 ```
-    2. Debemos crear también la suite de pruebas en **testng.xml**:
+2. Debemos crear también la suite de pruebas en **testng.xml**:
+
 ```xml
 <test name="Valores inválidos" preserve-order="false" parallel="true">
     <classes>
@@ -41,9 +44,10 @@
     </classes>
 </test>
 ```
-    3. Finalmente, agregaremos la condición de error en la clase factorial
+3. Finalmente, agregaremos la condición de error en la clase factorial
+
 ```java
-if(x > 20 || x < 0){
+	if(x > 20 || x < 0){
             throw new InvalidArgumentException(new String[]{"El valor de x no es válido"});
         }
 ```
