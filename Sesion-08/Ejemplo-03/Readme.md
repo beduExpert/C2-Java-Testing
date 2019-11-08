@@ -1,28 +1,29 @@
+## Ejemplo 03: Corrección de errores
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+Al finalizar el ejercicio anterior nuestro proyecto contaba con varios problemas que afectan su calidad.
 
-## Titulo del Ejemplo
+Corrige los dos bugs del código.
 
-### OBJETIVO
+1. Desde la pantalla del reporte de SonarQube ingresa al panel de Bugs.
 
-- Lo que esperamos que el alumno aprenda
+  ![Panel de bugs](img/figura01.png)
 
-#### REQUISITOS
+1. Identifica el archivo e interpreta los errores detectados (de ser necesario, da click en _See Rule_ para aclarar).
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+  ![Detalle Regla](img/figura02.png)
 
-#### DESARROLLO
+1. El primer bug nos indica que estamos atrapando una excepción que debe ser relanzada. Ve al archivo y separa InterruptedException de las otras dos. Dale su propio bloque catch.
 
-Agrega las instrucciones generales del ejemplo o reto
+  ![Corrección 1](img/figura03.png)
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+  Hacer esto requerirá cambios en las firmas de los métodos -ya que InterruptedException es una excepción checada-, tanto de la clase como de la interfaz.
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
+1. El segundo bug se debe a que el bloque _else if_ no asigna la variable bestMatch. Para los fines de este ejercicio usemos el mismo resultado que el bloque _else_ 
 
-![imagen](https://picsum.photos/200/300)
+  ![Corrección 2](img/figura04.png)
 
+1. Guarda el archivo y ejecuta las pruebas para verificar que todas sigan verdes.
 
+1. Vuelve a ejecutar el análisis de SoanrQube. 
+
+  ![Nuevo análisis](img/figura05.png)
