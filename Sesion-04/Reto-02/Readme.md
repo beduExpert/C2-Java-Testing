@@ -18,7 +18,9 @@ Recuerda que las pruebas pueden ser ejecutadas mediante la interfaz del IDE o co
 
 <details>
 	<summary>Solución</summary>
-    1. Continuaremos con la adición de pruebas para la clase CalculadoraPerimetro, como ya existe el método para probar la función del rectángulo, continuaremos ahora con el cuadrado y el data provider necesario:
+
+1. Continuaremos con la adición de pruebas para la clase CalculadoraPerimetro, como ya existe el método para probar la función del rectángulo, continuaremos ahora con el cuadrado y el data provider necesario:
+
 ```java
 @DataProvider(name = "perimetroCuadrado")
     public Object[][] valoresCuadrado(){
@@ -38,7 +40,8 @@ Recuerda que las pruebas pueden ser ejecutadas mediante la interfaz del IDE o co
     }
 ```
 
-    2. Después, probaremos la función del perímetro de un triángulo:
+2. Después, probaremos la función del perímetro de un triángulo:
+
 ```java
 @DataProvider(name = "perimetroTriangulo")
     public Object[][] valoresTriangulo(){
@@ -58,7 +61,8 @@ Recuerda que las pruebas pueden ser ejecutadas mediante la interfaz del IDE o co
     }
 ```
 
-    3. Por último para el perímetro, probaremos el círculo:
+3. Por último para el perímetro, probaremos el círculo:
+
 ```java
 @DataProvider(name = "perimetroCirculo")
     public Object[][] valoresCirculo(){
@@ -77,4 +81,5 @@ Recuerda que las pruebas pueden ser ejecutadas mediante la interfaz del IDE o co
         assertEquals(real, resultadoEsperado);
     }
 ```
+
 </details>
