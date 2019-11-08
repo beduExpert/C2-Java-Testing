@@ -20,7 +20,7 @@ public interface GoogleGeolocator {
 	 * @param lngSW
 	 * @return
 	 */
-	Establecimiento geolocate(Establecimiento establecimiento, Double latSW, Double lngSW, Double latNE, Double lngNE);
+	Establecimiento geolocate(Establecimiento establecimiento, Double latSW, Double lngSW, Double latNE, Double lngNE) throws InterruptedException;
 
-	Establecimiento geolocate(Establecimiento establecimiento);
+	Establecimiento geolocate(Establecimiento establecimiento) throws InterruptedException;
 }

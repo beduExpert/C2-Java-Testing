@@ -24,103 +24,107 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
-@RequiredArgsConstructor(onConstructor_ = { @Autowired })
+@RequiredArgsConstructor(onConstructor_ = {@Autowired})
 @Slf4j
 public class GoogleGeolocatorImpl implements GoogleGeolocator {
 
-	private final GeoApiContext geoApiContext;
+    private final GeoApiContext geoApiContext;
 
-	@Qualifier("countryFilter")
-	private final ComponentFilter countryComponentFilter;
+    @Qualifier("countryFilter")
+    private final ComponentFilter countryComponentFilter;
 
-	@Qualifier("defaultSW")
-	private final LatLng defaultSW;
+    @Qualifier("defaultSW")
+    private final LatLng defaultSW;
 
-	@Qualifier("defaultNE")
-	private final LatLng defaultNE;
+    @Qualifier("defaultNE")
+    private final LatLng defaultNE;
 
-	@Override
-	public Establecimiento geolocate(Establecimiento establecimiento) {
+    @Override
+    public Establecimiento geolocate(Establecimiento establecimiento) throws InterruptedException{
 
-		log.debug("Buscando coordenadas del establecimiento [{}] sin limites definidos",
-				establecimiento.getNombreEstablecimiento());
+        log.debug("Buscando coordenadas del establecimiento [{}] sin limites definidos",
+                establecimiento.getNombreEstablecimiento());
 
-		return geolocate(establecimiento, defaultSW, defaultNE);
-	}
+        return geolocate(establecimiento, defaultSW, defaultNE);
+    }
 
-	private void loadCoordinates(Establecimiento establecimiento, GeocodingResult results) {
-		Geometry geometry = results.geometry;
+    private void loadCoordinates(Establecimiento establecimiento, GeocodingResult results) {
+        Geometry geometry = results.geometry;
 
-		establecimiento.setLatitud(BigDecimal.valueOf(geometry.location.lat));
-		establecimiento.setLongitud(BigDecimal.valueOf(geometry.location.lng));
-	}
+        establecimiento.setLatitud(BigDecimal.valueOf(geometry.location.lat));
+        establecimiento.setLongitud(BigDecimal.valueOf(geometry.location.lng));
+    }
 
-	private String buildAddress(Establecimiento establecimiento) {
-		Colonia c = establecimiento.getColonia();
-		Municipio m = c.getMunicipio();
-		Estado e = m.getEstado();
-		String cp = c.getCompositeKey().getCodigoPostal();
+    private String buildAddress(Establecimiento establecimiento) {
+        Colonia c = establecimiento.getColonia();
+        Municipio m = c.getMunicipio();
+        Estado e = m.getEstado();
+        String cp = c.getCompositeKey().getCodigoPostal();
 
-		String address = String.format("%s %s %s %s, CP %s", establecimiento.getCalleYNumero(), c.getDescripcion(),
-				m.getDescripcion(), e.getDescripcion(), cp);
+        String address = String.format("%s %s %s %s, CP %s", establecimiento.getCalleYNumero(), c.getDescripcion(),
+                m.getDescripcion(), e.getDescripcion(), cp);
 
-		log.debug("Dirección: [{}]", address);
+        log.debug("Dirección: [{}]", address);
 
-		return address;
-	}
+        return address;
+    }
 
-	private Establecimiento geolocate(Establecimiento establecimiento, LatLng limiteSW, LatLng limiteNE) {
+    private Establecimiento geolocate(Establecimiento establecimiento, LatLng limiteSW, LatLng limiteNE) throws InterruptedException {
 
-		String address = buildAddress(establecimiento);
+        String address = buildAddress(establecimiento);
 
-		GeocodingResult[] results = null;
-		GeocodingResult bestMatch = null;
+        GeocodingResult[] results = null;
+        GeocodingResult bestMatch = null;
 
-		try {
-			//@formatter:off
-			results = GeocodingApi.geocode(geoApiContext, address)
-					.components(ComponentFilter.country("MX"))
-					.bounds(limiteSW, limiteNE)
-					.await();
-			//@formatter:on
-		} catch (ApiException | InterruptedException | IOException e1) {
-			log.error(String.format("Error al recuperar coordenadas de la dirección [%s]", address), e1);
-			return establecimiento;
+        try {
+            //@formatter:off
+            results = GeocodingApi.geocode(geoApiContext, address)
+                    .components(ComponentFilter.country("MX"))
+                    .bounds(limiteSW, limiteNE)
+                    .await();
+            //@formatter:on
+        } catch (InterruptedException e) {
+            log.error(String.format("Error al recuperar coordenadas de la dirección [%s]", address), e);
+            throw e;
+        } catch (ApiException | IOException e1) {
+            log.error(String.format("Error al recuperar coordenadas de la dirección [%s]", address), e1);
+            return establecimiento;
 
-		}
+        }
 
-		if (results.length < 1) {
-			log.error(String.format("No se encontraron resultados para la dirección [%s]", address));
-			return establecimiento;
-		} else if (results.length > 1) {
-			log.warn("Se encontraron múltiples resultados para la dirección [{}]. Se toma sólo el primer valor",
-					address);
-			log.warn("Resultados: [{}]", (Object[]) results);
+        if (results.length < 1) {
+            log.error(String.format("No se encontraron resultados para la dirección [%s]", address));
+            return establecimiento;
+        } else if (results.length > 1) {
+            log.warn("Se encontraron múltiples resultados para la dirección [{}]. Se toma sólo el primer valor",
+                    address);
+            log.warn("Resultados: [{}]", (Object[]) results);
+            //TODO: Define a bestmatch strategy
+            bestMatch = results[0];
 
-		} else {
-			//TODO: Define a bestmatch strategy
-			bestMatch = results[0];
-		}
+        } else {
+            bestMatch = results[0];
+        }
 
-		loadCoordinates(establecimiento, bestMatch);
-		log.debug("Coordenadas [{},{}]", establecimiento.getLatitud(), establecimiento.getLongitud());
+        loadCoordinates(establecimiento, bestMatch);
+        log.debug("Coordenadas [{},{}]", establecimiento.getLatitud(), establecimiento.getLongitud());
 
-		return establecimiento;
+        return establecimiento;
 
-	}
+    }
 
-	@Override
-	public Establecimiento geolocate(Establecimiento establecimiento, Double latSW, Double lngSW, Double latNE,
-			Double lngNE) {
+    @Override
+    public Establecimiento geolocate(Establecimiento establecimiento, Double latSW, Double lngSW, Double latNE,
+                                     Double lngNE) throws InterruptedException{
 
-		log.debug("Buscando coordenadas del establecimiento [{}] con límites definidos",
-				establecimiento.getNombreEstablecimiento());
+        log.debug("Buscando coordenadas del establecimiento [{}] con límites definidos",
+                establecimiento.getNombreEstablecimiento());
 
-		LatLng sw = new LatLng(latSW, lngSW);
-		LatLng ne = new LatLng(latNE, lngNE);
+        LatLng sw = new LatLng(latSW, lngSW);
+        LatLng ne = new LatLng(latNE, lngNE);
 
-		return geolocate(establecimiento, sw, ne);
+        return geolocate(establecimiento, sw, ne);
 
-	}
+    }
 
 }

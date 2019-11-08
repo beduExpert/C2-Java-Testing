@@ -12,6 +12,7 @@ import org.bedu.testing.demo.monitoreo.repository.MensajeRepository;
 import org.bedu.testing.demo.monitoreo.services.implementation.EstatusMensajeServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -51,6 +52,7 @@ class EstatusMensajeServiceImplementTest {
 
 	@Test
 	@DisplayName("Returns true when there are no messages")
+    @Disabled
 	public void testReadMessagesTrue() {
 
 		given(repository.findByEstablecimientoAndLeido(ESTABLECIMIENTO, false))
