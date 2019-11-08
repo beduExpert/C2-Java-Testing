@@ -1,5 +1,7 @@
 ## Sesión 05: Pruebas Unitarias
 
+Las pruebas unitarias permiten validar la funcionalidad de pequeñas unidades de nuestro código (entendidas estas como métodos o clases) para asegurar que su comportamiento es correcto y cumple con los requisitos antes de proceder a la integración con los demás módulos del sistema. En esta sesión se verá la utilidad de este tipo de pruebas y algunas de sus caracterísitcas principales.
+
 ### OBJETIVOS 
 
 - Familiarizarse con el concepto de pruebas unitarias
