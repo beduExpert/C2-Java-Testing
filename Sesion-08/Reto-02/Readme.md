@@ -1,11 +1,11 @@
-## Pasar la evaluación de calidad
+## Reto 02: Pasar la evaluación de calidad
 
 ### Objetivo
 * Corregir nuestro código para satisfacer el estandar de calidad del perfil _bedu QG_ 
 
 ### Requisitos
 
-1. Haber terminado el Ejercicio-02.
+1. Haber terminado el Ejemplo 02
 
 ### Desarrollo
 
