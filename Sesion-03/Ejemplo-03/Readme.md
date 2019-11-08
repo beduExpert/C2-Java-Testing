@@ -12,7 +12,7 @@
 
 #### DESARROLLO
 
-Este reto consiste en implementar la Kata de nombres invertidos, la cual indica que dado un nombre, por ejemplo: John Smith, la aplicación debe regresar el nombre en el formato Apellido, Nombre; en el ejemplo anterior la salida esperada es: Smith, John.
+Este ejemplo consiste en implementar la Kata de nombres invertidos, la cual indica que dado un nombre, por ejemplo: John Smith, la aplicación debe regresar el nombre en el formato Apellido, Nombre; en el ejemplo anterior la salida esperada es: Smith, John.
 
 Para este requerimiento planteamos algunas reglas:
 
