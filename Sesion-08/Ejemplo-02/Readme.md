@@ -1,6 +1,6 @@
-## SonarQube: Ejercicio 2
+## Ejemplo 02: Modificación de Quality Profile
 
-### Modificación de Quality Profile
+### Desarrollo 
 
 1. Entra a SonarQube como administrador. (Usa _admin_ para usuario y contraseña)
    ![Login](img/figura01.png)
