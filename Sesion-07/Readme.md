@@ -10,8 +10,18 @@ Mockito es una herramienta para el desarrollo de pruebas unitarias que permite l
 
 #### ORGANIZACION DE LA CLASE 
 
-- Tema que veran en el ejemplo
-
+- Uso de mockito en una aplicación sencilla
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
 
+- Simulación de excepciones con Mockito
+	- [Ejemplo 02](Ejemplo-02)
+
+- Creación de mocks para suplantar código que no existe
+	- [Reto 02](Reto-02)
+
+- Timeouts
+	- [Ejemplo 03](Ejemplo-03)
+
+- Creación de mocks para suplantar una conexión a una base de datos
+	- [Reto 03](Reto-03)
