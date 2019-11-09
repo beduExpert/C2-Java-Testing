@@ -11,8 +11,12 @@ _Nota_: SonarQube no está pensado para ser instalado en un equipo de desarrollo
 
 #### ORGANIZACION DE LA CLASE 
 
-- Tema que veran en el ejemplo
-
+- Instaación y configuración de SonarQube
 	- [Ejemplo 01](Ejemplo-01)
+	- [Ejemplo 02](Ejemplo-02)
 	- [Reto 01](Reto-01)
+	- [Reto 02](Reto-02)
 
+- Revisión y correccion de errores y vulnerabilidades
+	- [Ejemplo 03](Ejemplo-03)
+	- [Reto 03](Reto-03)
