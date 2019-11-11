@@ -1,0 +1,11 @@
+1) WHILE NOT final DO
+ 	2) leer
+ 	3) IF campo 1=0 THEN
+ 		4) procesar()
+ 		5) incrementar_contador()
+ 	6) ELSE IF campo 1=1 THEN
+ 		7) reinicia_contador()
+ 	8) ELSE
+ 		9) procesar()
+ 	10) END IF
+11) END WHILE
