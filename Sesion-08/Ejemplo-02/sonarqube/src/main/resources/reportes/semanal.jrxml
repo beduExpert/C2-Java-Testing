@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="diario" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b0829e40-b493-4b87-a438-42c945fba40f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="marchand"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="net.sf.jasperreports.export.xls.white.page.background" value="false"/>
+	<property name="net.sf.jasperreports.export.xls.one.page.per.sheet" value="true"/>
+	<parameter name="fechaFin" class="java.lang.String"/>
+	<parameter name="logoPath" class="java.lang.String"/>
+	<parameter name="fechaInicio" class="java.lang.String"/>
+	<parameter name="factorEstablecimientos" class="java.lang.Double"/>
+	<queryString>
+		<![CDATA[select 
+	CONCAT(u.nombre, " ", u.apellido_paterno) "promotor", 
+    sum(b.kms_recorridos) "distancia", 
+    (select count(v.id_visita) 
+     from visita v 
+     where v.fk_usuario = u.id_usuario
+     and date_format(v.fecha, "%Y-%m-%d") between $P{fechaInicio} and $P{fechaFin})  "numeroEstablecimientos"     
+from usuario u 
+ join bitacora_jornada b on b.fk_usuario = u.id_usuario 
+where date_format(b.inicio_jornada, "%Y-%m-%d") between $P{fechaInicio} and $P{fechaFin} 
+group by u.id_usuario]]>
+	</queryString>
+	<field name="promotor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="promotor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuario"/>
+	</field>
+	<field name="distancia" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="distancia"/>
+	</field>
+	<field name="numeroEstablecimientos" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="numeroEstablecimientos"/>
+	</field>
+	<variable name="distanciaTotal" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{distancia} + $F{numeroEstablecimientos} * $P{factorEstablecimientos}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="180" height="73" uuid="7061de24-c97a-4cdf-99e3-f82ed7976bef"/>
+				<imageExpression><![CDATA[$P{logoPath}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="180" y="1" width="392" height="28" uuid="76e4a30d-6c6c-445b-8eb5-0be2d811a144"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Actividad de promotores]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="29" width="392" height="20" uuid="9d43ad70-4821-4873-9875-ab36e59b906c"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Semanal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="49" width="392" height="24" uuid="224b4a75-052c-419d-abd3-e3f7e4450633"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[java.time.LocalDate.parse($P{fechaInicio}).format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yy"))  + 
+" - " + 
+ java.time.LocalDate.parse($P{fechaFin}).format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yy"))]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="143" height="21" uuid="553f5135-e91e-4231-9cad-01da76faa919"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Promotor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="0" width="143" height="21" uuid="188bf32b-fe61-42b1-a93c-61d2b872b891"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Distancia Recorrida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="0" width="143" height="21" uuid="e4456ac2-5dd3-4952-bb1d-b8546f358442"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Establecimientos Visitados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="0" width="143" height="21" uuid="fa9ac59d-3637-4adb-86f2-e66a59dca1ed"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kilometraje]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="143" height="24" uuid="b9337d8e-9643-4df2-9c7b-6879b9349856"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{promotor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="0" width="143" height="24" uuid="3443e9e2-1634-4284-937c-74b8e577789c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{distancia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="0" width="143" height="24" uuid="f13780ca-9136-4b93-95cb-46b2d295f3fb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numeroEstablecimientos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="0" width="143" height="24" uuid="0966b995-67a5-4c5b-8894-769cc9641cd4"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{distanciaTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
