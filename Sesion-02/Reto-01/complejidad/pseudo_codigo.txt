@@ -1,0 +1,16 @@
+1) seleccionar_idioma()
+		2) SWITCH 
+				3) CASE idioma = español THEN
+    				4) cargar_interfaz_español()
+    				5) cargar_diccionario_español()
+    				6) cargar_tutorial_español()
+				7) CASE idioma = inglés THEN
+    				8)  cargar_interfaz_inglés()
+    				9) cargar_diccionario_inglés()
+    				10) cargar_tutorial_inglés()
+				11) CASE idioma = alemán THEN
+    				12)  cargar_interfaz_alemán()
+    				13) cargar_diccionario_alemán()
+    				14) cargar_tutorial_alemán()
+		15) END_SWITCH
+	16) iniciar_aplicación()
