@@ -1,0 +1,39 @@
+spring:
+   profiles:
+      active: dev 
+oauth2:
+   jwt:
+      key: va2u&w79wer8
+   resource:
+      id: backend
+rd:
+   marchand:
+      monitoreo:
+         intervalo: 5
+         perfiles:
+            admin: Administrador
+            Superadmin: Superadministrador 
+            operativoMarchand: Operativo Marchand
+            promotor: Promotor
+         google:
+            apikey: AIzaSyCqbbmSX1yxxxxxxxxxxxxxxxxxxxxxxxx
+         reportes:
+            base: reportes/
+            diario: diario.jasper
+            subreporteDiario: subreporteDiario_promotor.jasper
+            semanal: semanal.jasper
+            contacto: contacto.jasper
+            visitas: reporte_marchand.jasper
+            logo: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Motorbike.svg/446px-Motorbike.svg.png
+---
+spring:
+   profiles: prod 
+   datasource:
+      jndi-name: java:/monitoreoDS
+rd:
+   marchand:
+      monitoreo:
+        client: clienteweb
+        password: marchand
+        tokenValidity: 36000 # 1h
+        resource: backend
