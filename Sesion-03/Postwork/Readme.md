@@ -1,11 +1,8 @@
-
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
-
-## Titulo del Ejemplo
+## Postwork 03: TDD en tu proyecto personal
 
 ### OBJETIVO
 
-- Lo que esperamos que el alumno aprenda
+- Implementar TDD en un conjunto de clases que comprendan un proyecto más grande, lo que permitirá usar y ver algunas técnicas más especializadas de TDD.
 
 #### REQUISITOS
 
