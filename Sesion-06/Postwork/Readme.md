@@ -15,7 +15,7 @@
 
 1. Una vez que tienes el código debes ejecutar un reporte de PMD. Exiten varias formas y formatos para generar este reporte. Si ejecutas el comando **pmd** en una consola obtendrás la lista de los parámetros y opciones soportados por esta herramienta:
 
-![imagen](/img/figura_01.png)
+![imagen](img/figura_01.png)
 
 2. En la terminal, cambia de ubicación al directorio *src\main\java* de tu proyecto. Es dentro de este directorio que está el código de la aplicación que será analizado por pmd.
 
@@ -27,7 +27,7 @@
         
 La instrucción anterior generará un reporte de salida llamado **reporte.html**, el cual tiene el siguiente contenido:
 
- ![imagen](/img/figura_02.png)
+ ![imagen](img/figura_02.png)
  
  En donde vemos que el proyecto tiene 17 problemas que pueden ser corregidos para aumentar la calidad de la aplicación.
  
@@ -38,7 +38,7 @@ La instrucción anterior generará un reporte de salida llamado **reporte.html**
  - Número de línea dentro del archivo anterior que contiene el problema.
  - Liga al sitio de PMD que contiene la descripción del problema y consejos para solucionarlo
  
-  ![imagen](/img/figura_03.png)
+  ![imagen](img/figura_03.png)
   
   Reaizaremos la resolución de algunos de los problemas mencionados por PMD, pero queda de tu lado el solucionar todos los problemas.
   
