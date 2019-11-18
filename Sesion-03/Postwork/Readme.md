@@ -4,6 +4,7 @@
 
 - Implementar TDD en un conjunto de clases que comprendan un proyecto más grande, lo que permitirá usar y ver algunas técnicas más especializadas de TDD.
 - Programar y ejecutar un conjunto de pruebas unitarias para una clase de lógica de negocio.
+- Aumentar la cobertura del código de las pruebas, lo cual nos ayudará a aumentar el grado o nivel de calidad y simplificará el trabajo en las últimas sesiones.
 
 #### REQUISITOS
 
