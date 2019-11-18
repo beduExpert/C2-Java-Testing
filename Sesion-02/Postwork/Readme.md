@@ -4,6 +4,7 @@
 ### OBJETIVO
 
 - Determinar el valor de la complejidad ciclomática del código de tu proyecto para conocer el número de caminos o flujos que será necesario probar durante la implementación de las pruebas unitarias.
+- Conocer qué tan complejo es tu código, para saber qué tan mantenible es, lo cual impacta directamente en la calidad.
 - Calcular el valor de la complejidad ciclomática usando distintos métodos, lo cual nos ayudará a comprobar que el cálculo se hizo de manera correcta.
 
 #### DESARROLLO
