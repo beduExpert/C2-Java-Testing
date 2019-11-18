@@ -31,7 +31,7 @@ Una vez que el análisis termine debes ver un resultado similar al siguiente en 
 
 ![imagen](img/figura_01.png)
 
-4. Revisa los problemas y vulnerabilidades reportados y corrígelos hasta obtener un "Quality Gate" con valor de "pass". Revisaremos algunos de los problemas más importantes y sus soluciones.
+4. Revisa los problemas y vulnerabilidades reportados y corrígelos hasta obtener un "Quality Gate" con valor de "passed". Revisaremos algunos de los problemas más importantes y sus soluciones.
 
 Primero, mejoraremos el tema de la confiabilidad del código. SonarQube indica que en la línea 151 del archivo **AsignadorDeCastigosTest.java** no deberíamos usar una nueva instancia de **Random** sino que debemos crear una sola instancia y reutilizar esta instancia cada vez. 
 
@@ -56,3 +56,51 @@ public class AsignadorDeCastigosTest {
 7. El siguiente problema indica que tenemos un campo llamado **sugerencia** en la clase **Sugerencia** lo cual puede ser confuso:
 
 ![imagen](img/figura_04.png)
+
+por lo que renombraremos este campo a "comentario".
+
+En la clase **AsignadorDeCastigos** eliminar la declaración que indica que se lanza una **NumberFormatException** en el método **leerPropiedades**
+
+En la clase **AsignadorDeCastigos** modificar el método **ordenarCastigosPorPrecio** para usar lambdas en vez de inner classes. El código original es:
+
+```java
+	private void ordenarCastigosPorPrecio() {
+		Collections.sort(listaCastigos, new Comparator<Castigo>() {
+			public int compare(Castigo o1, Castigo o2) {
+				return (int) ((o2.getPrecio() - o1.getPrecio()) * 100);
+			}
+		});
+
+	}
+```
+
+que puede modificarse de la siguiente forma:
+
+```java
+	private void ordenarCastigosPorPrecio() {
+		listaCastigos.sort((Castigo o1, Castigo o2) -> (int) ((o2.getPrecio() - o1.getPrecio()) * 100));
+	}
+```
+
+Lo mismo en el caso del método **ordenarCastigosPorPrioridad**, el código final queda de la siguiente forma:
+
+```java
+	private void ordenarCastigosPorPrioridad() {
+		listaCastigos.sort((Castigo o1, Castigo o2) ->  o2.getPrioridad() - o1.getPrioridad());
+	}
+```
+
+En el método **calcularAcumulado** se puede reemplazar la instanciación del *Arraylist* **historial** usando el operador diamente, de la siguiente forma:
+
+```java
+List<Asistencia> historial = new ArrayList<>(u.getHistorial());
+```
+
+lo mismo para el método **ponerCastigos**.
+
+8. Realizar el resto de las correcciones para que e pueda obtener un quality gate de "passed". Para esto será necesario lograr una cobertura de al menos el 80% en las clases de prueba, excluir de esto las clases del modelo y exepciones (en la configuraciónd el proyecto en Sonar).
+
+![imagen](img/figura_05.png)
+
+
+El código corregido se encuentra el repositorio en el directorio **proyecto_corregido**.
