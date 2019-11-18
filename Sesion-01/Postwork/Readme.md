@@ -2,9 +2,9 @@
 
 ### OBJETIVO
 
-- Crear un nuevo proyecto Maven.
-- Configurar el uso de JUnit como framework de pruebas unitarias.
-- Modificar el archivo **pom.xml** para que se puedan ejecutar pruebas unitarias.
+- Reforzar el aprendizaje de la sesión 1.
+- Tener un proyecto configurado con los elementos necesarios para inicializar con pruebas unitarias, las cuales irás mejorando a lo largo de las sesiones.
+- Contar con un proyecto Maven y un archivo **pom.xml** modificado para que se puedan ejecutar pruebas unitarias.
 
 #### REQUISITOS
 
