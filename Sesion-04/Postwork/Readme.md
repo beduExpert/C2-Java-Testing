@@ -2,7 +2,7 @@
 
 ### OBJETIVO
 
-- Implementar TDD en un conjunto de clases que comprendan un proyecto más grande, lo que permitirá usar y ver algunas técnicas más especializadas de TDD.
+- Probar haciendo uso de algunas técnicas avanzadas de JUnit, lo cual ayudará a simplificar las pruebas unitarias conservando la funcionalidad de las mismas.
 - Programar y ejecutar un conjunto de pruebas unitarias para una clase de lógica de negocio.
 
 #### REQUISITOS
